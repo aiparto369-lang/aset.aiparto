@@ -1,0 +1,30 @@
+{
+  "release_gate_version": "0.2.0",
+  "software_core_status": "IMPLEMENTATION_BASELINE_COMPLETE",
+  "production_release": "BLOCKED",
+  "fixed_internal_defects": [
+    "UNKNOWN_RISK_STRONG_ACTION",
+    "REDUCE_REQUIRED_SEMANTICS",
+    "EVENT_BLOCK_SEMANTICS",
+    "ARBITRARY_STRESS_THRESHOLDS",
+    "ARBITRARY_RETEST_TOLERANCE",
+    "PIVOT_CONFIRMATION_AVAILABILITY",
+    "DECISION_RESULT_CROSS_FIELD_INVARIANT"
+  ],
+  "remaining_external_gates": {
+    "human_ab_validation": "PENDING",
+    "live_xau_rights": "PENDING",
+    "independent_fx_route": "PENDING",
+    "stress_baseline_data": "PENDING",
+    "premium_regime_dataset": "PENDING",
+    "out_of_sample_validation": "PENDING",
+    "shadow_run": "PENDING"
+  },
+  "next_allowed_work": {
+    "architecture_expansion": false,
+    "evidence_collection": true,
+    "human_validation": true,
+    "provider_activation_after_rights": true,
+    "out_of_sample_testing": true
+  }
+}

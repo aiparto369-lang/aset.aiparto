@@ -1,0 +1,15 @@
+{
+  "decision_id": "DEC-HIST-20260817-009",
+  "allowed_actions": [
+    "WAIT",
+    "INSUFFICIENT_EDGE"
+  ],
+  "preferred_action": "WAIT",
+  "size_capability": "ZERO",
+  "reason_codes": [
+    "RC-DEFAULT-CAUTION"
+  ],
+  "invalidation": [],
+  "review_triggers": [],
+  "audit_id": "AUD-HIST-20260817-009"
+}

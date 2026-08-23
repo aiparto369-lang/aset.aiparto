@@ -1,0 +1,11 @@
+{
+  "status": "READY_FOR_HUMAN_REVIEW",
+  "human_validation_status": "PENDING",
+  "hostile_review_fix": "PASS",
+  "fix": "Past-only context now excludes any observation whose observation_time exceeds target as_of.",
+  "ai_shadow_counts_as_human_validation": false,
+  "review_ui": [
+    "labeling/review-ui/labeler-A.html",
+    "labeling/review-ui/labeler-B.html"
+  ]
+}

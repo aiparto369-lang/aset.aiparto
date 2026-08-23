@@ -1,0 +1,354 @@
+{
+  "pages": {
+    "compass": {
+      "bytes": 28844,
+      "sha256": "d07bee3b03a2b152734f298d72b8393df5501e067c8131684f8e73ab5c383deb"
+    },
+    "dealer": {
+      "bytes": 12570,
+      "sha256": "6480f4652d2a1a6bb9c878d4cc1ef47413a99357fdd27f0d74675a014ddbc02f"
+    },
+    "landing": {
+      "bytes": 16789,
+      "sha256": "f83ec59ef13e67f1d43f76d132217fed4173e15fede913f8b21d25b69b2e8d3c"
+    }
+  },
+  "contrast": {
+    "compass": {
+      "background": "#05080C",
+      "tokens": 16,
+      "contrast": [
+        {
+          "token": "--txt",
+          "fg": "#DCE6EF",
+          "bg": "#05080C",
+          "ratio": 15.87,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--txt2",
+          "fg": "#8798A8",
+          "bg": "#05080C",
+          "ratio": 6.77,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--txt3",
+          "fg": "#7E8F9E",
+          "bg": "#05080C",
+          "ratio": 6.03,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--brass",
+          "fg": "#C9A227",
+          "bg": "#05080C",
+          "ratio": 8.3,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--brass2",
+          "fg": "#B89430",
+          "bg": "#05080C",
+          "ratio": 6.99,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--glow",
+          "fg": "#5BE0C8",
+          "bg": "#05080C",
+          "ratio": 12.37,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--b0",
+          "fg": "#5AA9E6",
+          "bg": "#05080C",
+          "ratio": 7.89,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--b1",
+          "fg": "#5BD6A0",
+          "bg": "#05080C",
+          "ratio": 11.06,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--b2",
+          "fg": "#E0B341",
+          "bg": "#05080C",
+          "ratio": 10.22,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--b3",
+          "fg": "#EE8B4F",
+          "bg": "#05080C",
+          "ratio": 8.07,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--b4",
+          "fg": "#F2604E",
+          "bg": "#05080C",
+          "ratio": 6.27,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--unk",
+          "fg": "#7A8896",
+          "bg": "#05080C",
+          "ratio": 5.53,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        }
+      ]
+    },
+    "dealer": {
+      "background": "#05080C",
+      "tokens": 14,
+      "contrast": [
+        {
+          "token": "--txt",
+          "fg": "#E2EAF1",
+          "bg": "#05080C",
+          "ratio": 16.51,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--txt2",
+          "fg": "#8B9BA9",
+          "bg": "#05080C",
+          "ratio": 7.03,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--txt3",
+          "fg": "#7E8F9E",
+          "bg": "#05080C",
+          "ratio": 6.03,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--brass",
+          "fg": "#C9A227",
+          "bg": "#05080C",
+          "ratio": 8.3,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--brass2",
+          "fg": "#B89430",
+          "bg": "#05080C",
+          "ratio": 6.99,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--glow",
+          "fg": "#5BE0C8",
+          "bg": "#05080C",
+          "ratio": 12.37,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--warn",
+          "fg": "#E0B341",
+          "bg": "#05080C",
+          "ratio": 10.22,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--bad",
+          "fg": "#F2604E",
+          "bg": "#05080C",
+          "ratio": 6.27,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--good",
+          "fg": "#5BD6A0",
+          "bg": "#05080C",
+          "ratio": 11.06,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        }
+      ]
+    },
+    "landing": {
+      "background": "#05080C",
+      "tokens": 13,
+      "contrast": [
+        {
+          "token": "--txt",
+          "fg": "#E4ECF3",
+          "bg": "#05080C",
+          "ratio": 16.81,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--txt2",
+          "fg": "#8C9CAA",
+          "bg": "#05080C",
+          "ratio": 7.12,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--txt3",
+          "fg": "#7E8F9E",
+          "bg": "#05080C",
+          "ratio": 6.03,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--brass",
+          "fg": "#C9A227",
+          "bg": "#05080C",
+          "ratio": 8.3,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--brass2",
+          "fg": "#B89430",
+          "bg": "#05080C",
+          "ratio": 6.99,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--glow",
+          "fg": "#5BE0C8",
+          "bg": "#05080C",
+          "ratio": 12.37,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--warn",
+          "fg": "#E0B341",
+          "bg": "#05080C",
+          "ratio": 10.22,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        },
+        {
+          "token": "--bad",
+          "fg": "#F2604E",
+          "bg": "#05080C",
+          "ratio": 6.27,
+          "wcag_aa_normal": true,
+          "wcag_aa_large": true
+        }
+      ]
+    }
+  },
+  "numerals": {
+    "compass": {
+      "persian_digit_chars": 6,
+      "latin_digit_chars": 187,
+      "mixed": true,
+      "dominant": "latin"
+    },
+    "dealer": {
+      "persian_digit_chars": 2,
+      "latin_digit_chars": 33,
+      "mixed": true,
+      "dominant": "latin"
+    },
+    "landing": {
+      "persian_digit_chars": 8,
+      "latin_digit_chars": 26,
+      "mixed": true,
+      "dominant": "latin"
+    }
+  },
+  "rtl": {
+    "compass": {
+      "html_dir_attr": false,
+      "html_lang_attr": false,
+      "css_direction_rtl": true,
+      "logical_props_used": 10,
+      "physical_props_used": 0,
+      "zwnj_count": 77,
+      "arabic_yeh_kaf": 0,
+      "bdi_or_isolate": 4,
+      "lang_on_inline_spans": 1
+    },
+    "dealer": {
+      "html_dir_attr": false,
+      "html_lang_attr": false,
+      "css_direction_rtl": true,
+      "logical_props_used": 6,
+      "physical_props_used": 0,
+      "zwnj_count": 28,
+      "arabic_yeh_kaf": 0,
+      "bdi_or_isolate": 1,
+      "lang_on_inline_spans": 0
+    },
+    "landing": {
+      "html_dir_attr": false,
+      "html_lang_attr": false,
+      "css_direction_rtl": true,
+      "logical_props_used": 6,
+      "physical_props_used": 0,
+      "zwnj_count": 112,
+      "arabic_yeh_kaf": 0,
+      "bdi_or_isolate": 1,
+      "lang_on_inline_spans": 2
+    }
+  },
+  "latin_fragments": {
+    "compass": [
+      "TGJU",
+      "oz"
+    ],
+    "dealer": [],
+    "landing": [
+      "JSON",
+      "Tehran",
+      "generated"
+    ]
+  },
+  "jalali": {
+    "compass": {
+      "gregorian_stamps": 0,
+      "jalali_present": true
+    },
+    "dealer": {
+      "gregorian_stamps": 0,
+      "jalali_present": true
+    },
+    "landing": {
+      "gregorian_stamps": 2,
+      "jalali_present": false
+    }
+  },
+  "section_counts": {
+    "compass": 5,
+    "dealer": 2,
+    "landing": 8
+  }
+}

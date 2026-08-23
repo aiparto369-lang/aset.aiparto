@@ -1,0 +1,24 @@
+{
+  "audit_id": "AUD-HIST-20260808-003",
+  "decision_id": "DEC-HIST-20260808-003",
+  "snapshot_id": "SNAP-HIST-20260808-003",
+  "created_at": "2026-08-22T20:46:13.113999+00:00",
+  "policy_versions": {
+    "data": "0.1.0",
+    "risk": "0.1.0",
+    "decision": "0.1.0",
+    "governance": "0.1.0"
+  },
+  "model_versions": {
+    "decision_engine": "0.1.0",
+    "state_classifier": "0.1.0"
+  },
+  "input_hash": "d1842d798046a4517defea1c0e9ed8e495cbf5fe247a1f2a8171d89b47c80efe",
+  "output_hash": "e7748de45843135a331b21deabfc2eecd553509178bd0c1d078885b5e459b907",
+  "notes": [
+    "Historical pilot record created from source-backed public historical tables.",
+    "Premium state intentionally UNKNOWN pending calibration.",
+    "Stress/timing remain UNKNOWN without validated microstructure/setup inputs.",
+    "This is validation data, not a live investment recommendation."
+  ]
+}

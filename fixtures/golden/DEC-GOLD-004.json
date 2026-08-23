@@ -1,0 +1,35 @@
+{
+  "case_id": "DEC-GOLD-004",
+  "category": "decision",
+  "title": "FX down XAU down",
+  "input": {
+    "decision_id": "DEC-TEST",
+    "snapshot_id": "SNAP-TEST",
+    "asset": "IRAN_GOLD",
+    "instrument": "MELTED_GOLD",
+    "horizon": "TACTICAL",
+    "states": {
+      "data_state": "READY",
+      "fx_price": "DOWNTREND",
+      "xau_price": "DOWNTREND",
+      "gold_premium": "NORMAL",
+      "coin_premium": "NORMAL",
+      "fx_stress": "NORMAL",
+      "timing": "INVALIDATED",
+      "evidence_conflict": "NONE"
+    },
+    "constraints": {
+      "risk": "NONE",
+      "portfolio": "NONE",
+      "event": "NONE"
+    },
+    "existing_position": "MODERATE"
+  },
+  "expected": {
+    "allowed_any": [
+      "REDUCE",
+      "EXIT",
+      "AVOID"
+    ]
+  }
+}

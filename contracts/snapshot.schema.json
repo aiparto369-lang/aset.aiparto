@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/snapshot.schema.json",
+  "title": "Capital Compass Market Snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "snapshot_id",
+    "as_of",
+    "market_state",
+    "evidence",
+    "derived",
+    "events",
+    "immutable"
+  ],
+  "properties": {
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^SNAP-[A-Z0-9._:-]+$"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "immutable": {
+      "type": "boolean",
+      "const": true
+    },
+    "market_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "iran_session",
+        "xau_session"
+      ],
+      "properties": {
+        "iran_session": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "CLOSED",
+            "HOLIDAY",
+            "UNKNOWN"
+          ]
+        },
+        "xau_session": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "CLOSED",
+            "HOLIDAY",
+            "PRE_MARKET",
+            "POST_MARKET",
+            "UNKNOWN"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "xauusd",
+        "usd_irr",
+        "gold_18k",
+        "melted_gold",
+        "emami_coin"
+      ],
+      "properties": {
+        "xauusd": {
+          "type": "array",
+          "items": {
+            "$ref": "evidence.schema.json"
+          }
+        },
+        "usd_irr": {
+          "type": "array",
+          "items": {
+            "$ref": "evidence.schema.json"
+          }
+        },
+        "gold_18k": {
+          "type": "array",
+          "items": {
+            "$ref": "evidence.schema.json"
+          }
+        },
+        "melted_gold": {
+          "type": "array",
+          "items": {
+            "$ref": "evidence.schema.json"
+          }
+        },
+        "emami_coin": {
+          "type": "array",
+          "items": {
+            "$ref": "evidence.schema.json"
+          }
+        }
+      }
+    },
+    "derived": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "implied_gold_value",
+        "gold_premium",
+        "coin_premium"
+      ],
+      "properties": {
+        "implied_gold_value": {
+          "anyOf": [
+            {
+              "$ref": "evidence.schema.json"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "gold_premium": {
+          "anyOf": [
+            {
+              "$ref": "evidence.schema.json"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "coin_premium": {
+          "anyOf": [
+            {
+              "$ref": "evidence.schema.json"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "title",
+          "verification",
+          "first_available_time",
+          "materiality"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verification": {
+            "type": "string",
+            "enum": [
+              "RUMOR",
+              "PARTIALLY_CONFIRMED",
+              "CONFIRMED",
+              "OFFICIAL"
+            ]
+          },
+          "first_available_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "materiality": {
+            "type": "string",
+            "enum": [
+              "LOW",
+              "MATERIAL",
+              "HIGH",
+              "SYSTEMIC"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

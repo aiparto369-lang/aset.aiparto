@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "status": "PILOT_CANDIDATE_SELECTION",
+  "xauusd": {
+    "preferred_pilot_candidate": "ALPHA_VANTAGE",
+    "challenger_candidate": "METALS_API",
+    "activation_rule": "NO_LIVE_USE_UNTIL_KEY_AND_RIGHTS_CONFIRMED",
+    "rationale": [
+      "Alpha Vantage documents a dedicated GOLD_SILVER_SPOT endpoint for live gold/silver spot prices.",
+      "Alpha Vantage terms require commercial-use agreement for business/investment-analysis use; therefore adapter remains disabled until rights are confirmed.",
+      "Metals-API documents real-time precious metals data and bid/ask symbols, making it useful as a challenger/cross-check candidate.",
+      "Metals-API free plan is testing/personal only; paid plans permit commercial/public use during active subscription, but its competition restriction requires legal/product-fit review before production."
+    ]
+  },
+  "usd_irr": {
+    "pilot_routes": [
+      {
+        "route_id": "IRAN-FX-MANUAL-TGJU",
+        "source_id": "SRC-TGJU",
+        "mode": "CONTROLLED_MANUAL_OBSERVATION",
+        "status": "PILOT_APPROVED",
+        "reason": "Avoid automated collection until terms/access rights are reviewed."
+      },
+      {
+        "route_id": "IRAN-FX-MANUAL-BONBAST",
+        "source_id": "SRC-BONBAST",
+        "mode": "CONTROLLED_MANUAL_OBSERVATION",
+        "status": "PILOT_APPROVED",
+        "reason": "Independent observed route; semantics must be recorded (bid/ask/reference, timestamp, settlement)."
+      }
+    ],
+    "production_rule": "AUTOMATION_REQUIRES_ACCESS_AND_RIGHTS_REVIEW"
+  },
+  "prohibited": [
+    "Do not scrape sources whose automation rights are unresolved.",
+    "Do not store API keys in repository or decision records.",
+    "Do not claim provider independence if both routes share the same upstream feed.",
+    "Do not promote any candidate to production merely because an adapter works technically."
+  ]
+}

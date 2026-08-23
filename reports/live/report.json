@@ -1,0 +1,308 @@
+{
+  "generated_at": "2026-08-23T19:07:09.028506+00:00",
+  "engine_version": "2.0.0",
+  "anchors": {
+    "xau_usd": 4601.6525,
+    "xau_source": "multi-venue median",
+    "xau_status": "CROSS_CHECKED",
+    "xau_divergence_pct": 0.00037644294060678327,
+    "usd_irr_crypto": 1979430.0,
+    "usd_irr_cash": 1927000.0,
+    "usd_irr_used": 1979430.0,
+    "anchor_kind": "USDT_LIVE",
+    "usdt_spread_bps": 7.969691644230488,
+    "tether_premium_pct": 0.027208095485210172,
+    "same_instant_legs": true
+  },
+  "sources": {
+    "retrieved_at": "2026-08-23T19:07:39.059204+00:00",
+    "usd_irr": {
+      "value": 1979430.0,
+      "n_sources": 3,
+      "n_outliers": 0,
+      "dispersion_pct": 0.0068810213041128,
+      "status": "OK",
+      "sources": [
+        {
+          "source": "ramzinex",
+          "value": 1967709.5,
+          "spread_bps": 0.0762307647546551
+        },
+        {
+          "source": "wallex",
+          "value": 1979430.0,
+          "spread_bps": 15.86315252370632
+        },
+        {
+          "source": "bitpin",
+          "value": 1981330.0,
+          "spread_bps": null
+        }
+      ],
+      "excluded": [],
+      "notes": []
+    },
+    "paxg": {
+      "value": 4607.655,
+      "n_sources": 3,
+      "n_outliers": 0,
+      "dispersion_pct": 0.00047638115266870223,
+      "status": "OK",
+      "sources": [
+        {
+          "source": "bitpin",
+          "value": 4607.09,
+          "spread_bps": null
+        },
+        {
+          "source": "kraken",
+          "value": 4609.285,
+          "spread_bps": 0.02169533886539513
+        },
+        {
+          "source": "gate",
+          "value": 4607.655,
+          "spread_bps": 0.02170301378948354
+        }
+      ],
+      "excluded": [],
+      "notes": []
+    },
+    "xaut": {
+      "value": 4595.65,
+      "n_sources": 3,
+      "n_outliers": 0,
+      "dispersion_pct": 0.00037644294060678327,
+      "status": "OK",
+      "sources": [
+        {
+          "source": "wallex",
+          "value": 4594.02,
+          "spread_bps": 17.32687276067591
+        },
+        {
+          "source": "okx",
+          "value": 4595.65,
+          "spread_bps": 0.21759707549411794
+        },
+        {
+          "source": "gate",
+          "value": 4595.75,
+          "spread_bps": 0.2175923407503972
+        }
+      ],
+      "excluded": [],
+      "notes": []
+    },
+    "xau_usd": 4601.6525,
+    "xau_status": "CROSS_CHECKED",
+    "xau_notes": [
+      "PAXG 4,607.65 و XAUT 4,595.65 — اختلاف پایه 0.26٪. میانه استفاده شد."
+    ],
+    "usd_spread_bps": 7.969691644230488,
+    "source_count": 9
+  },
+  "quotes": {
+    "MESGHAL_17": 911220000.0,
+    "SEKKE_EMAMI": 2090200000.0,
+    "NIM_SEKKE": 1065000000.0,
+    "ROB_SEKKE": 580000000.0,
+    "SEKKE_GERAMI": 305000000.0
+  },
+  "quote_meta": {
+    "MESGHAL_17": {
+      "observed_date": "2026-08-22",
+      "observed_jalali": "1405/05/31",
+      "source": "TGJU",
+      "bars_available": 120
+    },
+    "SEKKE_EMAMI": {
+      "observed_date": "2026-08-22",
+      "observed_jalali": "1405/05/31",
+      "source": "TGJU",
+      "bars_available": 120
+    },
+    "NIM_SEKKE": {
+      "observed_date": "2026-08-22",
+      "observed_jalali": "1405/05/31",
+      "source": "TGJU",
+      "bars_available": 120
+    },
+    "ROB_SEKKE": {
+      "observed_date": "2026-08-22",
+      "observed_jalali": "1405/05/31",
+      "source": "TGJU",
+      "bars_available": 120
+    },
+    "SEKKE_GERAMI": {
+      "observed_date": "2026-08-22",
+      "observed_jalali": "1405/05/31",
+      "source": "TGJU",
+      "bars_available": 120
+    }
+  },
+  "arbitrage": {
+    "rows": [
+      {
+        "instrument_id": "MESGHAL_17",
+        "fa": "مظنه (مثقال ۱۷ عیار)",
+        "kind": "BULLION",
+        "divisible": true,
+        "fine_grams": 3.248851,
+        "market_irr": 911220000.0,
+        "per_pure_gram_irr": 280474499.98868835,
+        "intrinsic_irr": 951425725.9129943,
+        "bubble_pct": -0.04225839686478163,
+        "implied_usd_irr": 1895782.4614939454
+      },
+      {
+        "instrument_id": "SEKKE_EMAMI",
+        "fa": "سکه امامی",
+        "kind": "COIN",
+        "divisible": false,
+        "fine_grams": 7.3197,
+        "market_irr": 2090200000.0,
+        "per_pure_gram_irr": 285558151.2903535,
+        "intrinsic_irr": 2143573162.9978607,
+        "bubble_pct": -0.024899156193584952,
+        "implied_usd_irr": 1930143.8632557322
+      },
+      {
+        "instrument_id": "NIM_SEKKE",
+        "fa": "نیم‌سکه",
+        "kind": "COIN",
+        "divisible": false,
+        "fine_grams": 3.65985,
+        "market_irr": 1065000000.0,
+        "per_pure_gram_irr": 290995532.6037953,
+        "intrinsic_irr": 1071786581.4989303,
+        "bubble_pct": -0.006332026931554851,
+        "implied_usd_irr": 1966896.1959308726
+      },
+      {
+        "instrument_id": "ROB_SEKKE",
+        "fa": "ربع‌سکه",
+        "kind": "COIN",
+        "divisible": false,
+        "fine_grams": 1.829925,
+        "market_irr": 580000000.0,
+        "per_pure_gram_irr": 316952880.5825376,
+        "intrinsic_irr": 535893290.74946517,
+        "bubble_pct": 0.08230502230929237,
+        "implied_usd_irr": 2142347.0303096827
+      },
+      {
+        "instrument_id": "SEKKE_GERAMI",
+        "fa": "سکه گرمی",
+        "kind": "COIN",
+        "divisible": false,
+        "fine_grams": 0.9144,
+        "market_irr": 305000000.0,
+        "per_pure_gram_irr": 333552055.99300086,
+        "intrinsic_irr": 267781917.32519692,
+        "bubble_pct": 0.13898654190904564,
+        "implied_usd_irr": 2254544.1306510223
+      }
+    ],
+    "faults": [],
+    "reference_pure_gram_irr": 292849865.841204,
+    "spread": {
+      "cheapest": "MESGHAL_17",
+      "cheapest_fa": "مظنه (مثقال ۱۷ عیار)",
+      "richest": "SEKKE_GERAMI",
+      "richest_fa": "سکه گرمی",
+      "spread_pct": 0.18924200241538225,
+      "statement_fa": "سکه گرمی به ازای هر گرم طلای خالص 18.9٪ گران‌تر از مظنه (مثقال ۱۷ عیار) است."
+    }
+  },
+  "consistency": {
+    "status": "FX_DIVERGENCE",
+    "faults": [],
+    "implied": {
+      "MESGHAL_17": 1895782.4614939454,
+      "SEKKE_EMAMI": 1930143.8632557322
+    },
+    "structural_premium_instruments": {
+      "NIM_SEKKE": 1966896.1959308726,
+      "ROB_SEKKE": 2142347.0303096827,
+      "SEKKE_GERAMI": 2254544.1306510223
+    },
+    "implied_median_usd_irr": 1912963.1623748387,
+    "dispersion_pct": 0.017962395950755782,
+    "fx_gap_pct": -0.03357877652918329,
+    "notes": [
+      "دلار ضمنی بازار طلا 191,296 تومان است، در حالی که نرخ ارز ورودی 197,943 تومان است (-3.4٪)."
+    ]
+  },
+  "unit_fault": null,
+  "breakeven_usd_irr_at_zero_bubble": {
+    "SEKKE_EMAMI": 1930143.8632557322,
+    "NIM_SEKKE": 1966896.1959308726,
+    "ROB_SEKKE": 2142347.0303096827,
+    "SEKKE_GERAMI": 2254544.1306510223
+  },
+  "faults": [],
+  "disclaimer": "این گزارش تحلیل ارزش نسبی مبتنی بر داده عمومی است و توصیه سرمایه‌گذاری نیست. ارقام حباب از مشخصات فیزیکی منتشرشده ابزارها و قیمت‌های لحظه‌ای بازار محاسبه شده‌اند.",
+  "compass": {
+    "angle_deg": 290.4548000562396,
+    "magnitude": 0.9872477769271912,
+    "confidence": 1.0,
+    "quadrant": [
+      "N",
+      "W"
+    ],
+    "label": "طلا عقب‌مانده",
+    "description": "ریال تحت فشار است ولی حباب باز نشده. طلا هنوز به نرخ ارز نرسیده.",
+    "fx_axis": {
+      "key": "fx",
+      "fa": "فشار ارزی",
+      "value": 0.3450118447933071,
+      "raw": {
+        "tether_gap": 0.027208095485210172,
+        "implied_gap": 0.000392852098254398
+      },
+      "confidence": 1.0,
+      "notes": []
+    },
+    "premium_axis": {
+      "key": "premium",
+      "fa": "فشار حباب",
+      "value": -0.925,
+      "raw": {
+        "current_premium": 0.00039285209825457024,
+        "percentile": 0.0375,
+        "history_days": 720,
+        "history_median": 0.1894690008132428,
+        "window_sensitivity": {
+          "windows": {
+            "365": {
+              "days": 365,
+              "percentile": 0.07397260273972603,
+              "median": 0.08932983411931361
+            },
+            "720": {
+              "days": 720,
+              "percentile": 0.0375,
+              "median": 0.1894690008132428
+            },
+            "1095": {
+              "days": 1095,
+              "percentile": 0.034703196347031964,
+              "median": 0.12790073685937298
+            },
+            "all": {
+              "days": 2413,
+              "percentile": 0.1404890178201409,
+              "median": 0.055839979392086514
+            }
+          },
+          "spread_pp": 10.578582147310893,
+          "stable": true
+        }
+      },
+      "confidence": 1.0,
+      "notes": []
+    },
+    "notes": []
+  }
+}

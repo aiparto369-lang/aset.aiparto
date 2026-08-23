@@ -1,0 +1,315 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/state.schema.json",
+  "title": "Capital Compass State Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "state_id",
+    "name",
+    "value",
+    "horizon",
+    "evidence_ids",
+    "rule",
+    "confidence",
+    "computed_at"
+  ],
+  "properties": {
+    "state_id": {
+      "type": "string",
+      "pattern": "^STATE-[A-Z0-9._:-]+$"
+    },
+    "name": {
+      "type": "string",
+      "enum": [
+        "DATA_STATE",
+        "FX_PRICE_STATE",
+        "FX_STRESS_STATE",
+        "XAU_PRICE_STATE",
+        "GOLD_PREMIUM_STATE",
+        "COIN_PREMIUM_STATE",
+        "TIMING_STATE",
+        "EVIDENCE_CONFLICT_STATE",
+        "PORTFOLIO_CONSTRAINT",
+        "RISK_CONSTRAINT"
+      ]
+    },
+    "value": {
+      "type": "string",
+      "minLength": 1
+    },
+    "horizon": {
+      "type": "string",
+      "enum": [
+        "TACTICAL",
+        "INTERMEDIATE",
+        "STRATEGIC",
+        "NOT_APPLICABLE"
+      ]
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^EV-[A-Z0-9._:-]+$"
+      },
+      "uniqueItems": true
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_id",
+        "version"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        }
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MODERATE",
+        "LOW"
+      ]
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "computed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiry_condition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "const": "DATA_STATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "READY",
+              "READY_LIMITED",
+              "REVIEW_REQUIRED",
+              "BLOCKED"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "const": "FX_PRICE_STATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "UPTREND",
+              "DOWNTREND",
+              "RANGE",
+              "TRANSITION",
+              "DISLOCATED",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "const": "FX_STRESS_STATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "NORMAL",
+              "ELEVATED",
+              "HIGH",
+              "DISLOCATED",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "const": "XAU_PRICE_STATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "UPTREND",
+              "DOWNTREND",
+              "RANGE",
+              "TRANSITION",
+              "EXTENDED_UP",
+              "EXTENDED_DOWN",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "enum": [
+              "GOLD_PREMIUM_STATE",
+              "COIN_PREMIUM_STATE"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "LOW",
+              "NORMAL",
+              "HIGH",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "const": "TIMING_STATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "SETUP_FORMING",
+              "SETUP_CONFIRMED",
+              "RETESTING",
+              "EXTENDED",
+              "INVALIDATED",
+              "NO_SETUP",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "const": "EVIDENCE_CONFLICT_STATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "NONE",
+              "MINOR",
+              "MATERIAL",
+              "CRITICAL"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "const": "PORTFOLIO_CONSTRAINT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "NONE",
+              "NO_INCREASE",
+              "REDUCE",
+              "BLOCK",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "name": {
+            "const": "RISK_CONSTRAINT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "NONE",
+              "SIZE_LIMIT",
+              "ENTRY_LIMIT",
+              "REDUCE_REQUIRED",
+              "BLOCK",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

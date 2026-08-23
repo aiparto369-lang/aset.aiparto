@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/source-registry.schema.json",
+  "title": "Capital Compass Source Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "registry_version",
+    "sources"
+  ],
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "name",
+          "source_class",
+          "semantic_roles",
+          "variables",
+          "access",
+          "rights",
+          "health_policy",
+          "limitations"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^SRC-[A-Z0-9._:-]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domain": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_class": {
+            "enum": [
+              "AUTHORITATIVE_PRIMARY",
+              "GOVERNED_BENCHMARK",
+              "PROFESSIONAL_MARKET_DATA",
+              "AGGREGATOR",
+              "MARKET_OBSERVATION",
+              "NEWS_ANALYSIS",
+              "SOCIAL_UNVERIFIED"
+            ]
+          },
+          "semantic_roles": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "OFFICIAL_FACT",
+                "BENCHMARK",
+                "LIVE_MARKET_OBSERVATION",
+                "FREE_MARKET_FX_OBSERVATION",
+                "DOMESTIC_GOLD_OBSERVATION",
+                "COIN_OBSERVATION",
+                "EVENT_CONFIRMATION",
+                "SECONDARY_CROSSCHECK"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "variables": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "access": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "method",
+              "automation_status"
+            ],
+            "properties": {
+              "method": {
+                "enum": [
+                  "API",
+                  "FILE",
+                  "MANUAL",
+                  "LICENSED_FEED",
+                  "WEB_FETCH",
+                  "NOT_CONFIGURED"
+                ]
+              },
+              "automation_status": {
+                "enum": [
+                  "APPROVED",
+                  "PILOT_ONLY",
+                  "DISABLED",
+                  "NOT_CONFIGURED"
+                ]
+              },
+              "endpoint": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "auth_required": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "rights": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "commercial_use",
+              "redistribution"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "CLEARED",
+                  "REVIEW_REQUIRED",
+                  "RESTRICTED",
+                  "UNKNOWN"
+                ]
+              },
+              "commercial_use": {
+                "enum": [
+                  "ALLOWED",
+                  "REVIEW_REQUIRED",
+                  "NOT_ALLOWED",
+                  "UNKNOWN"
+                ]
+              },
+              "redistribution": {
+                "enum": [
+                  "ALLOWED",
+                  "REVIEW_REQUIRED",
+                  "NOT_ALLOWED",
+                  "UNKNOWN"
+                ]
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "health_policy": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "criticality",
+              "fallback_source_ids"
+            ],
+            "properties": {
+              "criticality": {
+                "enum": [
+                  "M1",
+                  "M2",
+                  "M3"
+                ]
+              },
+              "fallback_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^SRC-[A-Z0-9._:-]+$"
+                },
+                "uniqueItems": true
+              }
+            }
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

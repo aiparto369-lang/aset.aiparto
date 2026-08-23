@@ -1,0 +1,24 @@
+{
+  "label_id": "LBL-A-PKT-005",
+  "packet_id": "PKT-005",
+  "snapshot_id": "SNAP-HIST-20260811-006",
+  "labeler_id": "LABELER-A",
+  "labeling_manual_version": "0.1.0",
+  "created_at": null,
+  "future_data_hidden": true,
+  "system_outputs_hidden": true,
+  "labels": {
+    "data_state": null,
+    "fx_price_state": null,
+    "fx_stress_state": null,
+    "xau_price_state": null,
+    "gold_premium_state": null,
+    "coin_premium_state": null,
+    "timing_state": null,
+    "evidence_conflict_state": null
+  },
+  "ambiguity": null,
+  "allowed_alternative_labels": {},
+  "evidence_refs": [],
+  "comment": null
+}

@@ -1,0 +1,23 @@
+{
+  "decision_id": "DEC-PILOT-SAMPLE-001",
+  "snapshot_id": "SNAP-PILOT-SAMPLE-001",
+  "asset": "IRAN_GOLD",
+  "instrument": "MELTED_GOLD",
+  "horizon": "TACTICAL",
+  "states": {
+    "data_state": "READY",
+    "fx_price": "UPTREND",
+    "xau_price": "UPTREND",
+    "gold_premium": "NORMAL",
+    "coin_premium": "NORMAL",
+    "fx_stress": "NORMAL",
+    "timing": "SETUP_CONFIRMED",
+    "evidence_conflict": "NONE"
+  },
+  "constraints": {
+    "risk": "NONE",
+    "portfolio": "NONE",
+    "event": "NONE"
+  },
+  "existing_position": "NONE"
+}

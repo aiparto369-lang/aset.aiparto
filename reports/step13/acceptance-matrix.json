@@ -1,0 +1,93 @@
+{
+  "version": "1.0.0",
+  "software_acceptance": [
+    {
+      "id": "SW-01",
+      "criterion": "Structured contracts",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-02",
+      "criterion": "Hard data/risk/portfolio gates",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-03",
+      "criterion": "UNKNOWN fail-closed",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-04",
+      "criterion": "REDUCE semantics enforced",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-05",
+      "criterion": "Pivot confirmation time explicit",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-06",
+      "criterion": "Stress/premium fail-closed pre-calibration",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-07",
+      "criterion": "Decision cross-field runtime invariant",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-08",
+      "criterion": "Audit + immutable snapshots",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-09",
+      "criterion": "Blind labeling no future leakage",
+      "status": "PASS"
+    },
+    {
+      "id": "SW-10",
+      "criterion": "Architecture freeze",
+      "status": "PASS"
+    }
+  ],
+  "production_acceptance": [
+    {
+      "id": "PR-01",
+      "criterion": "Independent human A/B + adjudication",
+      "status": "PENDING"
+    },
+    {
+      "id": "PR-02",
+      "criterion": "Approved live XAU feed",
+      "status": "PENDING"
+    },
+    {
+      "id": "PR-03",
+      "criterion": "Independent comparable USD/IRR route",
+      "status": "PENDING"
+    },
+    {
+      "id": "PR-04",
+      "criterion": "Spread/source-dispersion baseline",
+      "status": "PENDING"
+    },
+    {
+      "id": "PR-05",
+      "criterion": "Premium regime baseline",
+      "status": "PENDING"
+    },
+    {
+      "id": "PR-06",
+      "criterion": "Out-of-sample validation",
+      "status": "PENDING"
+    },
+    {
+      "id": "PR-07",
+      "criterion": "Multi-state shadow run",
+      "status": "PENDING"
+    }
+  ],
+  "release_rule": "All production items must PASS before controlled release."
+}

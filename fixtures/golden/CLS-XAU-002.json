@@ -1,0 +1,31 @@
+{
+  "case_id": "CLS-XAU-002",
+  "category": "classification",
+  "title": "XAU downtrend",
+  "input": {
+    "decision_id": "DEC-TEST",
+    "snapshot_id": "SNAP-TEST",
+    "asset": "IRAN_GOLD",
+    "instrument": "MELTED_GOLD",
+    "horizon": "TACTICAL",
+    "states": {
+      "data_state": "READY",
+      "fx_price": "RANGE",
+      "xau_price": "DOWNTREND",
+      "gold_premium": "NORMAL",
+      "coin_premium": "NORMAL",
+      "fx_stress": "NORMAL",
+      "timing": "NO_SETUP",
+      "evidence_conflict": "NONE"
+    },
+    "constraints": {
+      "risk": "NONE",
+      "portfolio": "NONE",
+      "event": "NONE"
+    },
+    "existing_position": "NONE"
+  },
+  "expected": {
+    "xau_price": "DOWNTREND"
+  }
+}

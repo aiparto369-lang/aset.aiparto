@@ -1,0 +1,148 @@
+[
+  {
+    "state_id": "STATE-LIVE-001-DATA",
+    "name": "DATA_STATE",
+    "value": "READY_LIMITED",
+    "horizon": "NOT_APPLICABLE",
+    "evidence_ids": [
+      "EV-LIVE-001-USD-TGJU",
+      "EV-LIVE-001-XAU-INVESTING",
+      "EV-LIVE-001-GOLD18-TGJU"
+    ],
+    "rule": {
+      "rule_id": "DATA-MVP-001",
+      "version": "0.1.0"
+    },
+    "confidence": "HIGH",
+    "contradictions": [],
+    "limitations": [
+      "No exact independent USD/IRR cross-check value was available from the second route in parsed public data.",
+      "XAU is latest daily close, not live spot."
+    ],
+    "computed_at": "2026-08-22T20:39:00+00:00",
+    "expiry_condition": "Recompute when live XAU or independent USD/IRR observation becomes available."
+  },
+  {
+    "state_id": "STATE-LIVE-001-FX",
+    "name": "FX_PRICE_STATE",
+    "value": "UNKNOWN",
+    "horizon": "TACTICAL",
+    "evidence_ids": [
+      "EV-LIVE-001-USD-TGJU"
+    ],
+    "rule": {
+      "rule_id": "FX-PRICE-MVP-001",
+      "version": "0.1.0"
+    },
+    "confidence": "HIGH",
+    "contradictions": [],
+    "limitations": [
+      "A single current quote plus previous-day comparison is insufficient to classify HH/HL or LH/LL market structure."
+    ],
+    "computed_at": "2026-08-22T20:39:00+00:00",
+    "expiry_condition": "Requires sufficient structured price history."
+  },
+  {
+    "state_id": "STATE-LIVE-001-XAU",
+    "name": "XAU_PRICE_STATE",
+    "value": "UNKNOWN",
+    "horizon": "TACTICAL",
+    "evidence_ids": [
+      "EV-LIVE-001-XAU-INVESTING"
+    ],
+    "rule": {
+      "rule_id": "XAU-PRICE-MVP-001",
+      "version": "0.1.0"
+    },
+    "confidence": "HIGH",
+    "contradictions": [],
+    "limitations": [
+      "Latest close alone is insufficient for validated structural classification."
+    ],
+    "computed_at": "2026-08-22T20:39:00+00:00",
+    "expiry_condition": "Requires sufficient bar history or live price structure."
+  },
+  {
+    "state_id": "STATE-LIVE-001-PREM",
+    "name": "GOLD_PREMIUM_STATE",
+    "value": "UNKNOWN",
+    "horizon": "TACTICAL",
+    "evidence_ids": [
+      "EV-LIVE-001-GOLD18-PREMIUM"
+    ],
+    "rule": {
+      "rule_id": "PREMIUM-MVP-001",
+      "version": "0.1.0"
+    },
+    "confidence": "HIGH",
+    "contradictions": [],
+    "limitations": [
+      "Derived premium is approximately -1.66%, but no calibrated historical/regime baseline exists; LOW/NORMAL/HIGH is therefore not assigned."
+    ],
+    "computed_at": "2026-08-22T20:39:00+00:00",
+    "expiry_condition": "Recompute after premium baseline calibration."
+  },
+  {
+    "state_id": "STATE-LIVE-001-STRESS",
+    "name": "FX_STRESS_STATE",
+    "value": "UNKNOWN",
+    "horizon": "TACTICAL",
+    "evidence_ids": [
+      "EV-LIVE-001-USD-TGJU"
+    ],
+    "rule": {
+      "rule_id": "FX-STRESS-MVP-001",
+      "version": "0.1.0"
+    },
+    "confidence": "HIGH",
+    "contradictions": [],
+    "limitations": [
+      "Spread/source-dispersion/quote-continuity data are insufficient."
+    ],
+    "computed_at": "2026-08-22T20:39:00+00:00",
+    "expiry_condition": "Requires bid/ask or multiple comparable observations."
+  },
+  {
+    "state_id": "STATE-LIVE-001-TIMING",
+    "name": "TIMING_STATE",
+    "value": "UNKNOWN",
+    "horizon": "TACTICAL",
+    "evidence_ids": [
+      "EV-LIVE-001-USD-TGJU",
+      "EV-LIVE-001-XAU-INVESTING"
+    ],
+    "rule": {
+      "rule_id": "TIMING-MVP-001",
+      "version": "0.1.0"
+    },
+    "confidence": "HIGH",
+    "contradictions": [],
+    "limitations": [
+      "No validated setup geometry is available from this snapshot."
+    ],
+    "computed_at": "2026-08-22T20:39:00+00:00",
+    "expiry_condition": "Requires sufficient structure bars."
+  },
+  {
+    "state_id": "STATE-LIVE-001-CONFLICT",
+    "name": "EVIDENCE_CONFLICT_STATE",
+    "value": "NONE",
+    "horizon": "NOT_APPLICABLE",
+    "evidence_ids": [
+      "EV-LIVE-001-USD-TGJU",
+      "EV-LIVE-001-XAU-INVESTING",
+      "EV-LIVE-001-GOLD18-TGJU"
+    ],
+    "rule": {
+      "rule_id": "CONFLICT-MVP-001",
+      "version": "0.1.0"
+    },
+    "confidence": "MODERATE",
+    "contradictions": [],
+    "limitations": [
+      "Absence of a second exact FX quote means independence is limited; this is not treated as a conflict."
+    ],
+    "computed_at": "2026-08-22T20:39:00+00:00",
+    "expiry_condition": "Recompute when independent cross-check is added."
+  }
+]

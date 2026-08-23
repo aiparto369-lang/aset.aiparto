@@ -1,0 +1,56 @@
+{
+  "complete_A": 0,
+  "complete_B": 0,
+  "paired_complete": 0,
+  "fields": {
+    "data_state": {
+      "n": 0,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "confusion": {}
+    },
+    "fx_price_state": {
+      "n": 0,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "confusion": {}
+    },
+    "fx_stress_state": {
+      "n": 0,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "confusion": {}
+    },
+    "xau_price_state": {
+      "n": 0,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "confusion": {}
+    },
+    "gold_premium_state": {
+      "n": 0,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "confusion": {}
+    },
+    "coin_premium_state": {
+      "n": 0,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "confusion": {}
+    },
+    "timing_state": {
+      "n": 0,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "confusion": {}
+    },
+    "evidence_conflict_state": {
+      "n": 0,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "confusion": {}
+    }
+  },
+  "disagreements": []
+}

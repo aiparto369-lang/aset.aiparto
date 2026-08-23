@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/audit-record.schema.json",
+  "title": "Capital Compass Audit Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "audit_id",
+    "decision_id",
+    "snapshot_id",
+    "created_at",
+    "policy_versions",
+    "model_versions",
+    "input_hash",
+    "output_hash"
+  ],
+  "properties": {
+    "audit_id": {
+      "type": "string",
+      "pattern": "^AUD-[A-Z0-9._:-]+$"
+    },
+    "decision_id": {
+      "type": "string",
+      "pattern": "^DEC-[A-Z0-9._:-]+$"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^SNAP-[A-Z0-9._:-]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "policy_versions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data",
+        "risk",
+        "decision",
+        "governance"
+      ],
+      "properties": {
+        "data": {
+          "type": "string"
+        },
+        "risk": {
+          "type": "string"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "governance": {
+          "type": "string"
+        }
+      }
+    },
+    "model_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "input_hash": {
+      "type": "string",
+      "minLength": 16
+    },
+    "output_hash": {
+      "type": "string",
+      "minLength": 16
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

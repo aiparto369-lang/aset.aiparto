@@ -1,0 +1,38 @@
+{
+  "request_id": "capital-compass-dashboard-001",
+  "platform": null,
+  "domain": ["finance"],
+  "locale": ["fa-IR"],
+  "standards": ["wcag-2.2", "wai-aria-apg", "design-tokens-standard"],
+  "risk_signal": "confirmed-high-risk",
+  "risk_signal_reason": "Domain 'finance' matches risk/high-risk-ui-policy.md §4 Cross-domain High-Risk category list. Router §3 rule 4 requires this be set by the router itself, not left to a Domain Pack, because a missed High-Risk signal is an Article III (Safety) failure.",
+  "modules_to_load": [
+    {
+      "path": "risk/high-risk-ui-policy.md",
+      "reason": "Unconditional load per knowledge-router.md §3 rule 4 — resolved domain is Cross-domain High-Risk."
+    },
+    {
+      "path": "CONSTITUTION.md",
+      "reason": "Priority ladder §3 and High-Risk INVARIANT §5 govern every downstream decision."
+    }
+  ],
+  "modules_explicitly_excluded": [
+    {
+      "path": "platforms/**",
+      "reason": "platform is null — Intent Graph (stage 2) does not exist, so no platform pack may load per §3 rule 2."
+    },
+    {
+      "path": "domains/finance.md",
+      "reason": "Domain Pack does not exist until Phase 3; the High-Risk category was resolved from the policy stub's fixed §4 list instead."
+    },
+    {
+      "path": "standards/**, locale/rtl-persian/**",
+      "reason": "Named in the always-on baseline (§3 rule 1) but the files do not exist in this Phase 1 distribution. Listed here so the gap is auditable rather than invisible (CONST-018)."
+    }
+  ],
+  "freshness_check_required": false,
+  "freshness_note": "Stage 7 (Freshness Validation) is NOT IMPLEMENTED (Phase 3); this field is set false only because no live knowledge module was actually loaded, not because freshness was verified.",
+  "generated_by": "orchestrator/knowledge-router.md",
+  "generated_at_stage": "Knowledge Routing (§19 stage 6)",
+  "status": "CONTRACT DEFINED — hand-traced, not produced by an executing Intent Graph (stage 2 NOT IMPLEMENTED)."
+}

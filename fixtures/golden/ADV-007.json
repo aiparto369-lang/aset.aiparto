@@ -1,0 +1,31 @@
+{
+  "case_id": "ADV-007",
+  "category": "adversarial",
+  "title": "Price spike exploding spread",
+  "input": {
+    "decision_id": "DEC-TEST",
+    "snapshot_id": "SNAP-TEST",
+    "asset": "IRAN_GOLD",
+    "instrument": "MELTED_GOLD",
+    "horizon": "TACTICAL",
+    "states": {
+      "data_state": "READY",
+      "fx_price": "DISLOCATED",
+      "xau_price": "RANGE",
+      "gold_premium": "NORMAL",
+      "coin_premium": "NORMAL",
+      "fx_stress": "DISLOCATED",
+      "timing": "NO_SETUP",
+      "evidence_conflict": "NONE"
+    },
+    "constraints": {
+      "risk": "NONE",
+      "portfolio": "NONE",
+      "event": "NONE"
+    },
+    "existing_position": "NONE"
+  },
+  "expected": {
+    "must_not": "ACCUMULATE"
+  }
+}

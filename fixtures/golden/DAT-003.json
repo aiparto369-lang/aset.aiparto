@@ -1,0 +1,31 @@
+{
+  "case_id": "DAT-003",
+  "category": "data",
+  "title": "Missing XAU critical input represented as blocked",
+  "input": {
+    "decision_id": "DEC-TEST",
+    "snapshot_id": "SNAP-TEST",
+    "asset": "IRAN_GOLD",
+    "instrument": "MELTED_GOLD",
+    "horizon": "TACTICAL",
+    "states": {
+      "data_state": "BLOCKED",
+      "fx_price": "RANGE",
+      "xau_price": "RANGE",
+      "gold_premium": "NORMAL",
+      "coin_premium": "NORMAL",
+      "fx_stress": "NORMAL",
+      "timing": "NO_SETUP",
+      "evidence_conflict": "NONE"
+    },
+    "constraints": {
+      "risk": "NONE",
+      "portfolio": "NONE",
+      "event": "NONE"
+    },
+    "existing_position": "NONE"
+  },
+  "expected": {
+    "preferred_action": "DECISION_BLOCKED"
+  }
+}

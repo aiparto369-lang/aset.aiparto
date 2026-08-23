@@ -1,0 +1,74 @@
+{
+  "version": "0.1.0",
+  "variables": [
+    {
+      "variable_id": "XAUUSD",
+      "canonical_unit": "USD_PER_TROY_OUNCE",
+      "asset": "GOLD",
+      "market": "GLOBAL",
+      "criticality": "M1",
+      "accepted_quote_types": [
+        "BID",
+        "ASK",
+        "MID",
+        "LAST"
+      ]
+    },
+    {
+      "variable_id": "USD_IRR_FREE_MARKET",
+      "canonical_unit": "IRR_PER_USD",
+      "asset": "USD_IRR",
+      "market": "IRAN_FREE_MARKET",
+      "criticality": "M1",
+      "accepted_quote_types": [
+        "BID",
+        "ASK",
+        "MID",
+        "LAST",
+        "REFERENCE"
+      ]
+    },
+    {
+      "variable_id": "GOLD_18K_IRR_GRAM",
+      "canonical_unit": "IRR_PER_GRAM",
+      "asset": "GOLD_18K",
+      "market": "IRAN",
+      "criticality": "M1",
+      "accepted_quote_types": [
+        "BID",
+        "ASK",
+        "MID",
+        "LAST",
+        "REFERENCE"
+      ]
+    },
+    {
+      "variable_id": "MELTED_GOLD_IRR",
+      "canonical_unit": "IRR",
+      "asset": "MELTED_GOLD",
+      "market": "IRAN",
+      "criticality": "M2",
+      "accepted_quote_types": [
+        "BID",
+        "ASK",
+        "MID",
+        "LAST",
+        "REFERENCE"
+      ]
+    },
+    {
+      "variable_id": "EMAMI_COIN_IRR",
+      "canonical_unit": "IRR_PER_COIN",
+      "asset": "EMAMI_COIN",
+      "market": "IRAN",
+      "criticality": "M1",
+      "accepted_quote_types": [
+        "BID",
+        "ASK",
+        "MID",
+        "LAST",
+        "REFERENCE"
+      ]
+    }
+  ]
+}

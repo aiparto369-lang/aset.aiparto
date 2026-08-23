@@ -1,0 +1,23 @@
+{
+  "decision_id": "DEC-LIVE-20260822-001",
+  "snapshot_id": "SNAP-LIVE-20260822-001",
+  "asset": "IRAN_GOLD",
+  "instrument": "GOLD_18K",
+  "horizon": "TACTICAL",
+  "states": {
+    "data_state": "READY_LIMITED",
+    "fx_price": "UNKNOWN",
+    "xau_price": "UNKNOWN",
+    "gold_premium": "UNKNOWN",
+    "coin_premium": "UNKNOWN",
+    "fx_stress": "UNKNOWN",
+    "timing": "UNKNOWN",
+    "evidence_conflict": "NONE"
+  },
+  "constraints": {
+    "risk": "UNKNOWN",
+    "portfolio": "UNKNOWN",
+    "event": "NONE"
+  },
+  "existing_position": "UNKNOWN"
+}

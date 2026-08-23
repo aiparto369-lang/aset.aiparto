@@ -1,0 +1,68 @@
+{
+  "series_version": "0.1.0",
+  "record_count": 9,
+  "records": [
+    {
+      "pilot_id": "pilot-002",
+      "snapshot_id": "SNAP-HIST-20260806-002",
+      "date": "20260806",
+      "classification_scope": "historical pilot / validation only"
+    },
+    {
+      "pilot_id": "pilot-003",
+      "snapshot_id": "SNAP-HIST-20260808-003",
+      "date": "20260808",
+      "classification_scope": "historical pilot / validation only"
+    },
+    {
+      "pilot_id": "pilot-004",
+      "snapshot_id": "SNAP-HIST-20260809-004",
+      "date": "20260809",
+      "classification_scope": "historical pilot / validation only"
+    },
+    {
+      "pilot_id": "pilot-005",
+      "snapshot_id": "SNAP-HIST-20260810-005",
+      "date": "20260810",
+      "classification_scope": "historical pilot / validation only"
+    },
+    {
+      "pilot_id": "pilot-006",
+      "snapshot_id": "SNAP-HIST-20260811-006",
+      "date": "20260811",
+      "classification_scope": "historical pilot / validation only"
+    },
+    {
+      "pilot_id": "pilot-007",
+      "snapshot_id": "SNAP-HIST-20260815-007",
+      "date": "20260815",
+      "classification_scope": "historical pilot / validation only"
+    },
+    {
+      "pilot_id": "pilot-008",
+      "snapshot_id": "SNAP-HIST-20260816-008",
+      "date": "20260816",
+      "classification_scope": "historical pilot / validation only"
+    },
+    {
+      "pilot_id": "pilot-009",
+      "snapshot_id": "SNAP-HIST-20260817-009",
+      "date": "20260817",
+      "classification_scope": "historical pilot / validation only"
+    },
+    {
+      "pilot_id": "pilot-010",
+      "snapshot_id": "SNAP-HIST-20260818-010",
+      "date": "20260818",
+      "classification_scope": "historical pilot / validation only"
+    }
+  ],
+  "source_notes": [
+    "USD/IRR: TGJU historical free-market USD table.",
+    "18K gold: TGJU historical gram-18 table.",
+    "Emami coin: TGJU historical coin table where explicitly available.",
+    "XAU/USD: Investing.com daily historical table.",
+    "Weekend XAU snapshots use the latest prior market close and are explicitly marked as carry-forward.",
+    "No missing values were invented."
+  ]
+}

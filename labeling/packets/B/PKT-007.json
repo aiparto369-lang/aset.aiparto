@@ -1,0 +1,382 @@
+{
+  "packet_id": "PKT-007",
+  "snapshot_id": "SNAP-HIST-20260816-008",
+  "as_of": "2026-08-16T20:00:00+00:00",
+  "future_data_hidden": true,
+  "system_outputs_hidden": true,
+  "market_state": {
+    "iran_session": "CLOSED",
+    "xau_session": "CLOSED"
+  },
+  "evidence": {
+    "xauusd": [
+      {
+        "evidence_id": "EV-P008-XAU-INVESTING",
+        "variable_id": "XAUUSD",
+        "asset": "GOLD",
+        "market": "GLOBAL",
+        "value": 4376.6,
+        "unit": "USD_PER_TROY_OUNCE",
+        "quote_type": "CLOSE",
+        "observation_time": "2026-08-14T23:59:59+00:00",
+        "retrieval_time": "2026-08-22T20:44:00+00:00",
+        "source": {
+          "source_id": "SRC-INVESTING-PUBLIC",
+          "class": "MARKET_OBSERVATION",
+          "origin_id": "investing:xauusd:history:2026-08-14",
+          "name": "Investing.com",
+          "uri": "https://www.investing.com/currencies/xau-usd-historical-data"
+        },
+        "quality": {
+          "freshness": "STALE",
+          "verification": "VERIFIED",
+          "conflict": "NONE",
+          "quality_class": "DQ-B"
+        },
+        "materiality": "M1",
+        "lineage": {
+          "raw_reference": "Investing XAU/USD close 2026-08-14",
+          "derived": false,
+          "formula_id": null,
+          "formula_version": null,
+          "input_evidence_ids": []
+        },
+        "limitations": [
+          "Historical daily close, not executable intraday quote.",
+          "Weekend/closed-market carry-forward from 2026-08-14."
+        ]
+      }
+    ],
+    "usd_irr": [
+      {
+        "evidence_id": "EV-P008-USD-TGJU",
+        "variable_id": "USD_IRR_FREE_MARKET",
+        "asset": "USD_IRR",
+        "market": "IRAN_FREE_MARKET",
+        "value": 1866800.0,
+        "unit": "IRR_PER_USD",
+        "quote_type": "CLOSE",
+        "observation_time": "2026-08-16T16:30:00+00:00",
+        "retrieval_time": "2026-08-22T20:44:00+00:00",
+        "source": {
+          "source_id": "SRC-TGJU",
+          "class": "MARKET_OBSERVATION",
+          "origin_id": "tgju:price_dollar_rl:history:2026-08-16",
+          "name": "TGJU",
+          "uri": "https://english.tgju.org/profile/price_dollar_rl/history"
+        },
+        "quality": {
+          "freshness": "LATEST_RELEASE",
+          "verification": "VERIFIED",
+          "conflict": "NONE",
+          "quality_class": "DQ-B"
+        },
+        "materiality": "M1",
+        "lineage": {
+          "raw_reference": "TGJU USD history close for 2026-08-16",
+          "derived": false,
+          "formula_id": null,
+          "formula_version": null,
+          "input_evidence_ids": []
+        },
+        "limitations": [
+          "Historical single-source FX close; no same-time independent bid/ask cross-check."
+        ]
+      }
+    ],
+    "gold_18k": [
+      {
+        "evidence_id": "EV-P008-G18-TGJU",
+        "variable_id": "GOLD_18K_IRR_GRAM",
+        "asset": "GOLD_18K",
+        "market": "IRAN",
+        "value": 190394000.0,
+        "unit": "IRR_PER_GRAM",
+        "quote_type": "CLOSE",
+        "observation_time": "2026-08-16T16:30:00+00:00",
+        "retrieval_time": "2026-08-22T20:44:00+00:00",
+        "source": {
+          "source_id": "SRC-TGJU",
+          "class": "MARKET_OBSERVATION",
+          "origin_id": "tgju:geram18:history:2026-08-16",
+          "name": "TGJU",
+          "uri": "https://www.tgju.org/profile/geram18/history"
+        },
+        "quality": {
+          "freshness": "LATEST_RELEASE",
+          "verification": "VERIFIED",
+          "conflict": "NONE",
+          "quality_class": "DQ-B"
+        },
+        "materiality": "M1",
+        "lineage": {
+          "raw_reference": "TGJU 18K history close for 2026-08-16",
+          "derived": false,
+          "formula_id": null,
+          "formula_version": null,
+          "input_evidence_ids": []
+        },
+        "limitations": [
+          "Historical single-source domestic gold close."
+        ]
+      }
+    ],
+    "melted_gold": [],
+    "emami_coin": [
+      {
+        "evidence_id": "EV-P008-COIN-TGJU",
+        "variable_id": "EMAMI_COIN_IRR",
+        "asset": "EMAMI_COIN",
+        "market": "IRAN",
+        "value": 1890100000.0,
+        "unit": "IRR_PER_COIN",
+        "quote_type": "CLOSE",
+        "observation_time": "2026-08-16T16:30:00+00:00",
+        "retrieval_time": "2026-08-22T20:44:00+00:00",
+        "source": {
+          "source_id": "SRC-TGJU",
+          "class": "MARKET_OBSERVATION",
+          "origin_id": "tgju:sekee:history:2026-08-16",
+          "name": "TGJU",
+          "uri": "https://english.tgju.org/profile/sekee/history"
+        },
+        "quality": {
+          "freshness": "LATEST_RELEASE",
+          "verification": "VERIFIED",
+          "conflict": "NONE",
+          "quality_class": "DQ-B"
+        },
+        "materiality": "M2",
+        "lineage": {
+          "raw_reference": "TGJU Emami coin close for 2026-08-16",
+          "derived": false,
+          "formula_id": null,
+          "formula_version": null,
+          "input_evidence_ids": []
+        },
+        "limitations": [
+          "Coin premium not calculated in this pilot series."
+        ]
+      }
+    ]
+  },
+  "derived": {
+    "implied_gold_value": {
+      "evidence_id": "EV-P008-IMPLIED18K",
+      "variable_id": "GOLD_18K_IMPLIED_IRR_GRAM",
+      "asset": "GOLD_18K",
+      "market": "IRAN",
+      "value": 197009411.5,
+      "unit": "IRR_PER_GRAM",
+      "quote_type": "REFERENCE",
+      "observation_time": "2026-08-16T20:00:00+00:00",
+      "retrieval_time": "2026-08-22T20:44:00+00:00",
+      "source": {
+        "source_id": "SRC-DERIVED",
+        "class": "PROFESSIONAL_MARKET_DATA",
+        "origin_id": "formula:GOLD18-IMPLIED:v0.1.0",
+        "name": "Capital Compass Calculation Service",
+        "uri": null
+      },
+      "quality": {
+        "freshness": "LATEST_RELEASE",
+        "verification": "VERIFIED",
+        "conflict": "NONE",
+        "quality_class": "DQ-B"
+      },
+      "materiality": "M2",
+      "lineage": {
+        "raw_reference": null,
+        "derived": true,
+        "formula_id": "GOLD18-IMPLIED",
+        "formula_version": "0.1.0",
+        "input_evidence_ids": [
+          "EV-P008-XAU-INVESTING",
+          "EV-P008-USD-TGJU"
+        ]
+      },
+      "limitations": [
+        "Uses daily XAU close and historical FX close; not intraday matched."
+      ]
+    },
+    "gold_premium": {
+      "evidence_id": "EV-P008-PREMIUM18K",
+      "variable_id": "GOLD_18K_OBSERVED_VS_IMPLIED_PREMIUM",
+      "asset": "GOLD_18K",
+      "market": "IRAN",
+      "value": -0.03357916,
+      "unit": "FRACTION",
+      "quote_type": "REFERENCE",
+      "observation_time": "2026-08-16T20:00:00+00:00",
+      "retrieval_time": "2026-08-22T20:44:00+00:00",
+      "source": {
+        "source_id": "SRC-DERIVED",
+        "class": "PROFESSIONAL_MARKET_DATA",
+        "origin_id": "formula:GOLD18-PREMIUM:v0.1.0",
+        "name": "Capital Compass Calculation Service",
+        "uri": null
+      },
+      "quality": {
+        "freshness": "LATEST_RELEASE",
+        "verification": "VERIFIED",
+        "conflict": "NONE",
+        "quality_class": "DQ-C"
+      },
+      "materiality": "M2",
+      "lineage": {
+        "raw_reference": null,
+        "derived": true,
+        "formula_id": "GOLD18-PREMIUM",
+        "formula_version": "0.1.0",
+        "input_evidence_ids": [
+          "EV-P008-G18-TGJU",
+          "EV-P008-IMPLIED18K"
+        ]
+      },
+      "limitations": [
+        "Premium bucket remains UNKNOWN until historical/regime calibration is validated."
+      ]
+    },
+    "coin_premium": null
+  },
+  "events": [],
+  "past_only_context_window": [
+    {
+      "as_of": "2026-08-09T20:00:00+00:00",
+      "usd_irr": {
+        "value": 1854000.0,
+        "unit": "IRR_PER_USD",
+        "observation_time": "2026-08-09T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      },
+      "xauusd": {
+        "value": 4343.74,
+        "unit": "USD_PER_TROY_OUNCE",
+        "observation_time": "2026-08-07T23:59:59+00:00",
+        "freshness": "STALE",
+        "source_id": "SRC-INVESTING-PUBLIC"
+      },
+      "gold_18k": {
+        "value": 188093000.0,
+        "unit": "IRR_PER_GRAM",
+        "observation_time": "2026-08-09T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      }
+    },
+    {
+      "as_of": "2026-08-10T20:00:00+00:00",
+      "usd_irr": {
+        "value": 1856000.0,
+        "unit": "IRR_PER_USD",
+        "observation_time": "2026-08-10T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      },
+      "xauusd": {
+        "value": 4388.96,
+        "unit": "USD_PER_TROY_OUNCE",
+        "observation_time": "2026-08-10T23:59:59+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-INVESTING-PUBLIC"
+      },
+      "gold_18k": {
+        "value": 188016000.0,
+        "unit": "IRR_PER_GRAM",
+        "observation_time": "2026-08-10T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      }
+    },
+    {
+      "as_of": "2026-08-11T20:00:00+00:00",
+      "usd_irr": {
+        "value": 1878000.0,
+        "unit": "IRR_PER_USD",
+        "observation_time": "2026-08-11T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      },
+      "xauusd": {
+        "value": 4368.46,
+        "unit": "USD_PER_TROY_OUNCE",
+        "observation_time": "2026-08-11T23:59:59+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-INVESTING-PUBLIC"
+      },
+      "gold_18k": {
+        "value": 192056000.0,
+        "unit": "IRR_PER_GRAM",
+        "observation_time": "2026-08-11T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      }
+    },
+    {
+      "as_of": "2026-08-15T20:00:00+00:00",
+      "usd_irr": {
+        "value": 1870050.0,
+        "unit": "IRR_PER_USD",
+        "observation_time": "2026-08-15T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      },
+      "xauusd": {
+        "value": 4376.6,
+        "unit": "USD_PER_TROY_OUNCE",
+        "observation_time": "2026-08-14T23:59:59+00:00",
+        "freshness": "STALE",
+        "source_id": "SRC-INVESTING-PUBLIC"
+      },
+      "gold_18k": {
+        "value": 190794000.0,
+        "unit": "IRR_PER_GRAM",
+        "observation_time": "2026-08-15T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      }
+    },
+    {
+      "as_of": "2026-08-16T20:00:00+00:00",
+      "usd_irr": {
+        "value": 1866800.0,
+        "unit": "IRR_PER_USD",
+        "observation_time": "2026-08-16T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      },
+      "xauusd": {
+        "value": 4376.6,
+        "unit": "USD_PER_TROY_OUNCE",
+        "observation_time": "2026-08-14T23:59:59+00:00",
+        "freshness": "STALE",
+        "source_id": "SRC-INVESTING-PUBLIC"
+      },
+      "gold_18k": {
+        "value": 190394000.0,
+        "unit": "IRR_PER_GRAM",
+        "observation_time": "2026-08-16T16:30:00+00:00",
+        "freshness": "LATEST_RELEASE",
+        "source_id": "SRC-TGJU"
+      }
+    }
+  ],
+  "context_window_rule": "Only evidence with observation_time <= target as_of. Future evidence is omitted.",
+  "label_fields_required": [
+    "data_state",
+    "fx_price_state",
+    "fx_stress_state",
+    "xau_price_state",
+    "gold_premium_state",
+    "coin_premium_state",
+    "timing_state",
+    "evidence_conflict_state"
+  ],
+  "instructions": [
+    "Do not infer from future prices or system outputs.",
+    "UNKNOWN is valid when evidence is insufficient.",
+    "Use ambiguity flag when multiple labels are defensible.",
+    "Do not bucket premium without a defensible baseline."
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/label.schema.json",
+  "title": "Capital Compass Human Label Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "label_id",
+    "snapshot_id",
+    "labeler_id",
+    "labeling_manual_version",
+    "created_at",
+    "labels",
+    "ambiguity",
+    "future_data_hidden"
+  ],
+  "properties": {
+    "label_id": {
+      "type": "string",
+      "pattern": "^LBL-[A-Z0-9._:-]+$"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^SNAP-[A-Z0-9._:-]+$"
+    },
+    "labeler_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "labeling_manual_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "future_data_hidden": {
+      "type": "boolean",
+      "const": true
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_state",
+        "fx_price_state",
+        "fx_stress_state",
+        "xau_price_state",
+        "gold_premium_state",
+        "coin_premium_state",
+        "timing_state",
+        "evidence_conflict_state"
+      ],
+      "properties": {
+        "data_state": {
+          "enum": [
+            "READY",
+            "READY_LIMITED",
+            "REVIEW_REQUIRED",
+            "BLOCKED"
+          ]
+        },
+        "fx_price_state": {
+          "enum": [
+            "UPTREND",
+            "DOWNTREND",
+            "RANGE",
+            "TRANSITION",
+            "DISLOCATED",
+            "UNKNOWN"
+          ]
+        },
+        "fx_stress_state": {
+          "enum": [
+            "NORMAL",
+            "ELEVATED",
+            "HIGH",
+            "DISLOCATED",
+            "UNKNOWN"
+          ]
+        },
+        "xau_price_state": {
+          "enum": [
+            "UPTREND",
+            "DOWNTREND",
+            "RANGE",
+            "TRANSITION",
+            "EXTENDED_UP",
+            "EXTENDED_DOWN",
+            "UNKNOWN"
+          ]
+        },
+        "gold_premium_state": {
+          "enum": [
+            "LOW",
+            "NORMAL",
+            "HIGH",
+            "UNKNOWN"
+          ]
+        },
+        "coin_premium_state": {
+          "enum": [
+            "LOW",
+            "NORMAL",
+            "HIGH",
+            "UNKNOWN"
+          ]
+        },
+        "timing_state": {
+          "enum": [
+            "SETUP_FORMING",
+            "SETUP_CONFIRMED",
+            "RETESTING",
+            "EXTENDED",
+            "INVALIDATED",
+            "NO_SETUP",
+            "UNKNOWN"
+          ]
+        },
+        "evidence_conflict_state": {
+          "enum": [
+            "NONE",
+            "MINOR",
+            "MATERIAL",
+            "CRITICAL"
+          ]
+        }
+      }
+    },
+    "ambiguity": {
+      "enum": [
+        "CLEAR",
+        "AMBIGUOUS",
+        "HIGHLY_AMBIGUOUS"
+      ]
+    },
+    "allowed_alternative_labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "comment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

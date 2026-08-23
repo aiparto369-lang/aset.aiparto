@@ -1,0 +1,35 @@
+{
+  "policy_version": "0.2.0",
+  "decision_constraints": {
+    "risk": {
+      "BLOCK": "BLOCK_NEW_RISK",
+      "REDUCE_REQUIRED": "FORCE_REDUCE_IF_POSITION_EXISTS",
+      "ENTRY_LIMIT": "NO_ACCUMULATE_MAX_PROBE",
+      "SIZE_LIMIT": "MAX_SMALL",
+      "UNKNOWN": "NO_STRONG_NEW_RISK",
+      "NONE": "NONE"
+    },
+    "portfolio": {
+      "BLOCK": "BLOCK_ASSET",
+      "REDUCE": "FORCE_REDUCE_IF_POSITION_EXISTS",
+      "NO_INCREASE": "NO_INCREASE",
+      "UNKNOWN": "NO_STRONG_PERSONALIZED_ACTION",
+      "NONE": "NONE"
+    },
+    "event": {
+      "BLOCK": "BLOCK_NEW_RISK",
+      "LIMIT_ENTRY": "MAX_PROBE",
+      "CAUTION": "MAX_SMALL",
+      "UNKNOWN": "MAX_SMALL",
+      "NONE": "NONE"
+    }
+  },
+  "market_structure": {
+    "retest_tolerance": "REQUIRED_EXTERNAL"
+  },
+  "stress_calibration": {
+    "mode": "ROBUST_BASELINE_REQUIRED",
+    "minimum_samples": 30
+  },
+  "unknown_rule": "UNKNOWN must never create or strengthen conviction."
+}

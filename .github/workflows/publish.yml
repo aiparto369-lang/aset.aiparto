@@ -1,0 +1,95 @@
+name: publish
+
+# The engine runs here rather than in a Worker for one reason: it is Python, and
+# porting ~6k lines of financial logic to JS to fit a runtime would trade weeks
+# of work and a fresh class of bugs for nothing the product needs.
+#
+# Every accepted run commits its output. That makes git history the audit ledger
+# — append-only, timestamped, and independently verifiable — which is exactly
+# the out-of-sample record the project was missing and could only earn by
+# letting time pass. Cloudflare Pages deploys on push, so a commit IS a release.
+
+on:
+  schedule:
+    # Hourly during Tehran market hours (UTC+3:30, no DST).
+    # 05:00-16:00 UTC == 08:30-19:30 Tehran, Sat-Wed (Iran's working week).
+    #
+    # Hourly rather than half-hourly: the premium moves in tenths of a percent
+    # over an hour, so the extra readings cost Actions minutes without changing
+    # any decision the product supports. 13 runs/day instead of ~25.
+    - cron: "0 5-16 * * 0-4"
+    # One closing reading after the bazaar shuts.
+    - cron: "30 17 * * 0-4"
+  workflow_dispatch:        # manual run, for testing
+  push:
+    branches: [main]
+    paths: ["src/**", ".github/workflows/publish.yml"]
+
+concurrency:
+  group: publish
+  cancel-in-progress: false   # never abort a run mid-write
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      # Runs before anything else: a leaked credential is the one failure that
+      # cannot be undone by a revert, because the value is already public.
+      # Runs first: a CR that reaches a run: block breaks bash on Ubuntu, and
+      # the failure mode ($'': command not found) is opaque if you have not
+      # seen it before.
+      - name: Line endings
+        run: python tools/check_line_endings.py .
+
+      - name: Secret sweep
+        run: python tools/secret_sweep.py .
+
+      - name: Regression suite
+        run: python tests/run_all.py
+        env:
+          PYTHONPATH: src
+          PYTHONUTF8: "1"
+
+      - name: Build site
+        id: build
+        run: python -m capital_compass.api.publish_site --outdir public
+        env:
+          PYTHONPATH: src
+          PYTHONUTF8: "1"
+          PYTHONIOENCODING: utf-8
+
+      # A rejected run must leave the previous good output in place, so we only
+      # commit when the build actually produced a new accepted reading.
+      - name: Commit if changed
+        run: |
+          if [ -z "$(git status --porcelain public reports)" ]; then
+            echo "no change — nothing published"; exit 0
+          fi
+          git config user.name  "capital-compass-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add public reports
+          git commit -m "publish: $(date -u +'%Y-%m-%dT%H:%MZ')"
+          git push
+
+      - name: Notify Telegram on material change
+        if: success()
+        continue-on-error: true     # a Telegram outage must not fail the run
+        run: python -m capital_compass.api.telegram --digest --ledger reports/ledger.jsonl || true
+        env:
+          PYTHONPATH: src
+          PYTHONUTF8: "1"
+          CC_TELEGRAM_TOKEN: ${{ secrets.CC_TELEGRAM_TOKEN }}
+          CC_TELEGRAM_CHAT: ${{ secrets.CC_TELEGRAM_CHAT }}

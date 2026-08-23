@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/pilot-capture.schema.json",
+  "title": "Capital Compass Pilot Capture Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "capture_id",
+    "scheduled_for",
+    "captured_at",
+    "capture_type",
+    "snapshot_file",
+    "status"
+  ],
+  "properties": {
+    "capture_id": {
+      "type": "string",
+      "pattern": "^CAP-[A-Z0-9._:-]+$"
+    },
+    "scheduled_for": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "captured_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "capture_type": {
+      "enum": [
+        "ROUTINE",
+        "EVENT",
+        "STRESS",
+        "TRANSITION",
+        "MANUAL"
+      ]
+    },
+    "snapshot_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "PLANNED",
+        "CAPTURED",
+        "VALIDATED",
+        "REJECTED"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "decision_id": "DEC-HIST-20260811-006",
+  "allowed_actions": [
+    "WAIT"
+  ],
+  "preferred_action": "WAIT",
+  "size_capability": "ZERO",
+  "reason_codes": [
+    "RC-SINGLE-DRIVER"
+  ],
+  "invalidation": [],
+  "review_triggers": [],
+  "audit_id": "AUD-HIST-20260811-006"
+}

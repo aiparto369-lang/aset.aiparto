@@ -1,0 +1,40 @@
+{
+  "release_policy_version": "0.1.0",
+  "production_release": "BLOCKED",
+  "mandatory_gates": {
+    "human_ab_validation": {
+      "required": true,
+      "status": "PENDING"
+    },
+    "ohlc_structure_engine": {
+      "required": true,
+      "status": "IMPLEMENTED_TESTED_SYNTHETIC"
+    },
+    "premium_calibration": {
+      "required": true,
+      "status": "BLOCKED_INSUFFICIENT_SAMPLE",
+      "minimum_samples": 60
+    },
+    "stress_calibration": {
+      "required": true,
+      "status": "BLOCKED_MISSING_SPREAD_AND_INDEPENDENT_QUOTES"
+    },
+    "live_xau_rights": {
+      "required": true,
+      "status": "PENDING_PROVIDER_RIGHTS"
+    },
+    "independent_fx_crosscheck": {
+      "required": true,
+      "status": "PENDING"
+    },
+    "out_of_sample_validation": {
+      "required": true,
+      "status": "PENDING"
+    },
+    "shadow_run": {
+      "required": true,
+      "status": "PENDING"
+    }
+  },
+  "principle": "No gate may be waived by model-generated confidence."
+}

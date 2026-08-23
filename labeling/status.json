@@ -1,0 +1,18 @@
+{
+  "step": "10",
+  "human_validation_status": "PENDING",
+  "packets_A": 9,
+  "packets_B": 9,
+  "complete_submissions_A": 0,
+  "complete_submissions_B": 0,
+  "paired_complete": 0,
+  "adjudication_status": "NOT_STARTED",
+  "production_effect": "NONE",
+  "note": "No human labels fabricated.",
+  "blind_context_window": "PASS_STRICT_PAST_ONLY",
+  "review_ui": "READY",
+  "ai_shadow_status": "COMPLETE_NON_HUMAN",
+  "challenger_validation": "COMPLETE_NON_HUMAN",
+  "metamorphic_validation": "PASS",
+  "production_release": "BLOCKED_PENDING_HUMAN_AND_LARGER_SAMPLE"
+}

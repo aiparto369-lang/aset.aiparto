@@ -1,0 +1,32 @@
+{
+  "instructions": [
+    "This is a blank template. Do not enter invented values.",
+    "All timestamps must include timezone offset.",
+    "raw_unit must be explicit (e.g. TOMAN_PER_USD or IRR_PER_USD).",
+    "source_origin should identify the human-observed page/dealer/reference without exposing credentials."
+  ],
+  "records": [
+    {
+      "variable_id": "USD_IRR_FREE_MARKET",
+      "raw_value": null,
+      "raw_unit": "TOMAN_PER_USD",
+      "quote_type": "REFERENCE",
+      "observation_time": null,
+      "source_origin": null,
+      "market": "IRAN_FREE_MARKET",
+      "asset": "USD_IRR",
+      "note": null
+    },
+    {
+      "variable_id": "GOLD_18K_IRR_GRAM",
+      "raw_value": null,
+      "raw_unit": "TOMAN_PER_GRAM",
+      "quote_type": "REFERENCE",
+      "observation_time": null,
+      "source_origin": null,
+      "market": "IRAN",
+      "asset": "GOLD_18K",
+      "note": null
+    }
+  ]
+}

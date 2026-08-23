@@ -1,0 +1,55 @@
+{
+  "freeze_version": "1.0.0",
+  "frozen_at": "2026-08-23T02:57:24.530016+00:00",
+  "scope": "Gold/FX Vertical Slice",
+  "software_status": "IMPLEMENTATION_BASELINE_COMPLETE",
+  "architecture_expansion": "FROZEN",
+  "production_release": "BLOCKED",
+  "files": [
+    {
+      "path": "config/decision-policy-v0.2.json",
+      "sha256": "a9b82c8591ec182cb3d101af79c7c3b0e283948e86398ef3ff03192bf25c88d5",
+      "size_bytes": 945
+    },
+    {
+      "path": "src/capital_compass/decision/engine.py",
+      "sha256": "5b5b212d4dc33e82eaa77a76d5df87edc3405a6fc8403d673a18a75ff3f662a0",
+      "size_bytes": 2828
+    },
+    {
+      "path": "src/capital_compass/decision/constraint_governor.py",
+      "sha256": "50282234bc4bc0e703e0b9ed49ef186c564d6942c6c53428ed5c6b11c5f9cb4f",
+      "size_bytes": 2804
+    },
+    {
+      "path": "src/capital_compass/market_structure/ohlc.py",
+      "sha256": "a1bc807654831fed9cb8dea1852a164904dad90d635f52ac15a36d1925e6ada9",
+      "size_bytes": 2733
+    },
+    {
+      "path": "src/capital_compass/market_structure/stress.py",
+      "sha256": "709c9b5644b210849e81d9d1c260f2446c4d21aff529088d328d82478542328f",
+      "size_bytes": 1890
+    },
+    {
+      "path": "src/capital_compass/market_structure/premium_baseline.py",
+      "sha256": "062344a825e1e470a62916b5141c88ce47fd59664853e048a1093d5a8328b400",
+      "size_bytes": 930
+    },
+    {
+      "path": "src/capital_compass/validation/decision_contract.py",
+      "sha256": "c8623150beebdb75f831a14ea1beeaa594911a30398641c11ee26a81574ca0c7",
+      "size_bytes": 241
+    },
+    {
+      "path": "reports/step12/release-gate-v0.2.json",
+      "sha256": "baf6f9f1b393ba2a15a022b610f5432b4fee933d90db89f400ba4ed47b07e2ea",
+      "size_bytes": 926
+    }
+  ],
+  "change_policy": [
+    "No architecture expansion without observed validation failure.",
+    "Decision/risk semantic changes require hostile regression.",
+    "Release-gate changes require external evidence."
+  ]
+}

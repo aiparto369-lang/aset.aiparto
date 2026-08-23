@@ -1,0 +1,273 @@
+{
+  "dataset_version": "0.1.0",
+  "created_at": "2026-08-22T20:24:09.431322+00:00",
+  "snapshot_count": 50,
+  "intended_use": "Smoke/golden baseline before pilot data collection",
+  "prohibited_use": [
+    "Claiming production readiness",
+    "Calibrating numeric probabilities",
+    "Optimizing directly on future blind holdout"
+  ],
+  "categories": {
+    "data": 10,
+    "classification": 10,
+    "premium": 6,
+    "decision": 8,
+    "risk": 5,
+    "portfolio": 1,
+    "adversarial": 7,
+    "ai": 3
+  },
+  "cases": [
+    {
+      "case_id": "DAT-001",
+      "category": "data",
+      "title": "Normal valid snapshot"
+    },
+    {
+      "case_id": "DAT-002",
+      "category": "data",
+      "title": "Missing USD critical input represented as blocked"
+    },
+    {
+      "case_id": "DAT-003",
+      "category": "data",
+      "title": "Missing XAU critical input represented as blocked"
+    },
+    {
+      "case_id": "DAT-004",
+      "category": "data",
+      "title": "Stale critical USD"
+    },
+    {
+      "case_id": "DAT-005",
+      "category": "data",
+      "title": "Material timestamp mismatch"
+    },
+    {
+      "case_id": "DAT-006",
+      "category": "data",
+      "title": "Toman Rial mismatch"
+    },
+    {
+      "case_id": "DAT-007",
+      "category": "data",
+      "title": "Duplicate sources collapse to one origin"
+    },
+    {
+      "case_id": "DAT-008",
+      "category": "data",
+      "title": "Material source conflict"
+    },
+    {
+      "case_id": "DAT-009",
+      "category": "data",
+      "title": "Extreme anomalous quote"
+    },
+    {
+      "case_id": "DAT-010",
+      "category": "data",
+      "title": "Weekend stale XAU"
+    },
+    {
+      "case_id": "CLS-FX-001",
+      "category": "classification",
+      "title": "Clear FX uptrend"
+    },
+    {
+      "case_id": "CLS-FX-002",
+      "category": "classification",
+      "title": "Clear FX downtrend"
+    },
+    {
+      "case_id": "CLS-FX-003",
+      "category": "classification",
+      "title": "FX range"
+    },
+    {
+      "case_id": "CLS-FX-004",
+      "category": "classification",
+      "title": "FX transition"
+    },
+    {
+      "case_id": "CLS-FX-005",
+      "category": "classification",
+      "title": "FX dislocation"
+    },
+    {
+      "case_id": "CLS-XAU-001",
+      "category": "classification",
+      "title": "XAU uptrend"
+    },
+    {
+      "case_id": "CLS-XAU-002",
+      "category": "classification",
+      "title": "XAU downtrend"
+    },
+    {
+      "case_id": "CLS-XAU-003",
+      "category": "classification",
+      "title": "XAU range"
+    },
+    {
+      "case_id": "CLS-XAU-004",
+      "category": "classification",
+      "title": "XAU transition"
+    },
+    {
+      "case_id": "CLS-XAU-005",
+      "category": "classification",
+      "title": "XAU extended move"
+    },
+    {
+      "case_id": "CLS-PREM-001",
+      "category": "premium",
+      "title": "Normal gold premium"
+    },
+    {
+      "case_id": "CLS-PREM-002",
+      "category": "premium",
+      "title": "High gold premium"
+    },
+    {
+      "case_id": "CLS-PREM-003",
+      "category": "premium",
+      "title": "Normal coin premium"
+    },
+    {
+      "case_id": "CLS-PREM-004",
+      "category": "premium",
+      "title": "High coin premium"
+    },
+    {
+      "case_id": "CLS-PREM-005",
+      "category": "premium",
+      "title": "Coin rises while gold flat"
+    },
+    {
+      "case_id": "CLS-PREM-006",
+      "category": "premium",
+      "title": "Gold rises while coin flat"
+    },
+    {
+      "case_id": "DEC-GOLD-001",
+      "category": "decision",
+      "title": "FX up XAU down"
+    },
+    {
+      "case_id": "DEC-GOLD-002",
+      "category": "decision",
+      "title": "FX down XAU up"
+    },
+    {
+      "case_id": "DEC-GOLD-003",
+      "category": "decision",
+      "title": "FX up XAU up"
+    },
+    {
+      "case_id": "DEC-GOLD-004",
+      "category": "decision",
+      "title": "FX down XAU down"
+    },
+    {
+      "case_id": "RSK-001",
+      "category": "risk",
+      "title": "Strong thesis normal risk"
+    },
+    {
+      "case_id": "RSK-002",
+      "category": "risk",
+      "title": "Strong thesis elevated risk"
+    },
+    {
+      "case_id": "RSK-003",
+      "category": "risk",
+      "title": "Strong thesis critical risk"
+    },
+    {
+      "case_id": "RSK-004",
+      "category": "risk",
+      "title": "Strong thesis extended timing"
+    },
+    {
+      "case_id": "RSK-005",
+      "category": "risk",
+      "title": "Strong thesis high premium"
+    },
+    {
+      "case_id": "DEC-005",
+      "category": "decision",
+      "title": "Weak thesis perfect timing"
+    },
+    {
+      "case_id": "PRT-001",
+      "category": "portfolio",
+      "title": "Strong thesis portfolio concentration"
+    },
+    {
+      "case_id": "DEC-006",
+      "category": "decision",
+      "title": "No edge"
+    },
+    {
+      "case_id": "DEC-007",
+      "category": "decision",
+      "title": "Unknown critical state"
+    },
+    {
+      "case_id": "DAT-011",
+      "category": "data",
+      "title": "Material evidence conflict"
+    },
+    {
+      "case_id": "ADV-001",
+      "category": "adversarial",
+      "title": "Viral rumor only"
+    },
+    {
+      "case_id": "ADV-002",
+      "category": "adversarial",
+      "title": "Fake official source"
+    },
+    {
+      "case_id": "ADV-003",
+      "category": "adversarial",
+      "title": "Twenty syndicated articles one origin"
+    },
+    {
+      "case_id": "ADV-004",
+      "category": "adversarial",
+      "title": "Prompt injection inside webpage"
+    },
+    {
+      "case_id": "ADV-005",
+      "category": "adversarial",
+      "title": "Sudden manipulated quote"
+    },
+    {
+      "case_id": "ADV-006",
+      "category": "adversarial",
+      "title": "Positive news negative reaction"
+    },
+    {
+      "case_id": "ADV-007",
+      "category": "adversarial",
+      "title": "Price spike exploding spread"
+    },
+    {
+      "case_id": "AI-001",
+      "category": "ai",
+      "title": "LLM invents support level"
+    },
+    {
+      "case_id": "AI-002",
+      "category": "ai",
+      "title": "Same snapshot repeated"
+    },
+    {
+      "case_id": "AI-003",
+      "category": "ai",
+      "title": "Evidence ordering changed"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+<title>قطب‌نمای بازار طلا</title>
+<style>
+:root{--ink:#05080C;--s1:#0B1119;--s2:#111A24;--etch:#18222E;--etch2:#25323F;
+--txt:#E4ECF3;--txt2:#8C9CAA;--txt3:#7E8F9E;--brass:#C9A227;--brass2:#B89430;
+--glow:#5BE0C8;--warn:#E0B341;--bad:#F2604E;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ink);color:var(--txt);direction:rtl;text-align:right;
+font-family:Vazirmatn,"IRANSansX","Segoe UI",Tahoma,sans-serif;line-height:1.85;
+padding:0 16px 80px;font-size:15px}
+.w{max-width:960px;margin:0 auto}
+.mn{font-family:"JetBrains Mono",Consolas,monospace;direction:ltr;unicode-bidi:isolate;
+font-variant-numeric:tabular-nums}
+header{padding:64px 0 40px;border-bottom:1px solid var(--etch2)}
+.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--brass);margin:0 0 18px}
+h1{margin:0 0 20px;font-size:clamp(28px,5.6vw,46px);font-weight:800;line-height:1.35;
+letter-spacing:-.02em;max-width:20ch}
+h1 em{font-style:normal;color:var(--glow)}
+.lede{margin:0 0 28px;font-size:clamp(16px,2.4vw,19px);color:var(--txt2);max-width:56ch;
+line-height:1.8}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 26px;font-size:14.5px;font-weight:700;
+text-decoration:none;border:1px solid var(--brass);color:var(--ink);background:var(--brass)}
+.btn.ghost{background:none;color:var(--brass)}
+.btn:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+.prelaunch{display:inline-block;margin-top:24px;font-size:12px;padding:5px 14px;
+border:1px solid var(--etch2);color:var(--txt3)}
+section{padding:52px 0;border-bottom:1px solid var(--etch)}
+h2{margin:0 0 8px;font-size:clamp(20px,3.4vw,27px);font-weight:800;letter-spacing:-.01em}
+.sub{margin:0 0 30px;color:var(--txt2);font-size:15px;max-width:58ch}
+.proof{background:var(--s1);border:1px solid var(--etch2);border-inline-start:3px solid var(--warn);
+padding:26px 28px}
+.proof .q{font-size:clamp(17px,3vw,22px);font-weight:700;line-height:1.6;margin:0 0 18px}
+.pnum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;
+border-top:1px solid var(--etch2);padding-top:18px}
+.pnum>div{border-inline-end:1px solid var(--etch2);padding:0 18px}
+.pnum>div:last-child{border-inline-end:0}
+.pnum dt{font-size:10.5px;letter-spacing:.09em;color:var(--txt3);margin:0 0 5px}
+.pnum dd{margin:0;font-size:20px;font-weight:700;font-family:"JetBrains Mono",monospace;
+direction:ltr;text-align:right}
+.pnum dd.risk{color:var(--warn)}
+.pnote{margin:16px 0 0;font-size:12px;color:var(--txt3);line-height:1.75}
+.two{display:grid;gap:18px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--s1);border:1px solid var(--etch2);padding:22px 24px}
+.card h3{margin:0 0 12px;font-size:14px;letter-spacing:.06em}
+.card.does h3{color:var(--glow)}
+.card.not h3{color:var(--txt3)}
+.card ul{margin:0;padding-inline-start:20px;font-size:14px;color:var(--txt2)}
+.card li{margin-bottom:9px;line-height:1.75}
+.card.not li{color:var(--txt3)}
+.feats{display:grid;gap:20px}
+@media(min-width:720px){.feats{grid-template-columns:1fr 1fr}}
+.feat{border-top:2px solid var(--etch2);padding-top:16px}
+.feat b{display:block;font-size:15.5px;margin-bottom:7px}
+.feat p{margin:0;font-size:13.5px;color:var(--txt2);line-height:1.8}
+.feat .only{display:inline-block;font-size:10px;color:var(--brass);border:1px solid var(--brass2);
+padding:1px 8px;margin-inline-start:8px;vertical-align:middle}
+.tiers{display:grid;gap:18px;align-items:start}
+@media(min-width:820px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{border:1px solid var(--etch2);padding:26px 24px;background:var(--s1);position:relative}
+.tier.hi{border-color:var(--brass);background:var(--s2)}
+.tier .tag{position:absolute;top:-1px;left:-1px;background:var(--brass);color:var(--ink);
+font-size:10.5px;font-weight:700;padding:3px 12px}
+.tier h3{margin:0 0 4px;font-size:16px}
+.tier .px{margin:12px 0 4px;font-size:30px;font-weight:800;font-family:"JetBrains Mono",monospace;
+direction:rtl}
+.tier .un{font-size:12px;color:var(--txt3);margin:0 0 6px}
+.tier .for{font-size:12.5px;color:var(--txt2);margin:0 0 18px;padding-bottom:16px;
+border-bottom:1px solid var(--etch);line-height:1.7;min-height:3.4em}
+.tier ul{margin:0 0 22px;padding:0;list-style:none;font-size:13.5px}
+.tier li{margin-bottom:9px;color:var(--txt2);padding-inline-start:18px;position:relative;line-height:1.7}
+.tier li::before{content:"—";position:absolute;right:0;color:var(--brass2)}
+.tier .btn{width:100%;text-align:center;padding:11px}
+.faq{border-top:1px solid var(--etch);padding:18px 0}
+.faq:first-of-type{border-top:0}
+.faq b{display:block;font-size:15px;margin-bottom:6px}
+.faq p{margin:0;font-size:13.5px;color:var(--txt2);line-height:1.8}
+footer{padding-top:34px;color:var(--txt3);font-size:12px}
+footer p{margin:0 0 10px;line-height:1.85;max-width:70ch}
+footer b{color:var(--txt2)}
+a{color:var(--brass)}
+</style>
+<div class="w" dir="rtl" lang="fa">
+
+<header>
+  <p class="eyebrow">قطب‌نما · بازار طلا و ارز ایران</p>
+  <h1>چقدر از پول شما طلاست، و چقدرش <em>حباب</em>؟</h1>
+  <p class="lede">همه قیمت نشان می‌دهند. ما نشان می‌دهیم هر گرم طلای واقعی از
+  هر مسیر خرید چقدر برایتان تمام می‌شود — و اگر حباب جمع شود، چه بر سر موجودی
+  شما می‌آید.</p>
+  <div class="ctas">
+    <a class="btn" href="https://claude.ai/code/artifact/dd4b8d42-6081-4370-bb2e-eb80b207c5c4">قطب‌نمای زنده را ببینید</a>
+    <a class="btn ghost" href="https://claude.ai/code/artifact/ad684cd5-0331-4d3b-8d7d-2585e1d42b6b">موجودی خود را محاسبه کنید</a>
+  </div>
+  <span class="prelaunch">در مرحله پیش‌عرضه · قیمت‌ها و امکانات ممکن است تغییر کند</span>
+</header>
+
+<section>
+  <h2>مسئله‌ای که هیچ‌کس برایتان حساب نمی‌کند</h2>
+  <p class="sub">قیمت سکه را همه‌جا می‌بینید. اما قیمت، دو چیز است که با هم جمع
+  شده‌اند: ارزش طلای داخلش، و حبابی که بازار رویش گذاشته. این دو ریسک کاملاً
+  متفاوتی دارند.</p>
+  
+<div class="proof">
+  <p class="q">یک طلافروش با موجودی 17.6 میلیارد تومانی،
+  <span style="color:var(--warn)">440 میلیون تومان</span>
+  از آن حباب است — مبلغی که می‌تواند بدون یک ریال تغییر در قیمت طلا از بین برود.</p>
+  <div class="pnum">
+    <div><dt>ارزش کل موجودی</dt><dd>17.55<small> میلیارد</small></dd></div>
+    <div><dt>ارزش خودِ طلا</dt><dd>17.11<small> میلیارد</small></dd></div>
+    <div><dt>حباب در معرض ریسک</dt><dd class="risk">440<small> میلیون</small></dd></div>
+    <div><dt>سهم حباب</dt><dd class="risk">2.5٪</dd></div>
+  </div>
+  <p class="pnote">این یک مثال ساختگی نیست: محاسبه‌ای واقعی روی یک موجودی نمونه با
+  قیمت‌های زندهٔ 2026-08-23 14:24 است. عدد را با موجودی خودتان در
+  کنسول امتحان کنید.</p>
+</div>
+</section>
+
+<section>
+  <h2>چه می‌کند، و چه نمی‌کند</h2>
+  <p class="sub">این تفکیک را عمداً اول می‌گوییم، نه در پانویس.</p>
+  <div class="two">
+    <div class="card does">
+      <h3>می‌کند</h3>
+      <ul>
+        <li>حباب هر ابزار را از مشخصات فیزیکی منتشرشده و قیمت لحظه‌ای حساب می‌کند</li>
+        <li>همه ابزارها را روی «هر گرم طلای خالص» قابل مقایسه می‌کند</li>
+        <li>نرخ دلاری که بازار طلا در قیمت لحاظ کرده را استخراج می‌کند</li>
+        <li>می‌گوید اگر حباب جمع شود چقدر از موجودی شما کم می‌شود</li>
+        <li>وقتی داده کهنه یا ناسازگار است، صریح هشدار می‌دهد</li>
+      </ul>
+    </div>
+    <div class="card not">
+      <h3>نمی‌کند</h3>
+      <ul>
+        <li>قیمت فردا را پیش‌بینی نمی‌کند</li>
+        <li>سیگنال خرید و فروش نمی‌دهد</li>
+        <li>مشاوره سرمایه‌گذاری نیست</li>
+        <li>ادعای سوددهی ندارد و بازدهی گذشته نمی‌فروشد</li>
+        <li>وقتی داده کافی نیست، عدد نمی‌سازد — می‌گوید نمی‌دانم</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>چهار چیزی که جای دیگری نیست</h2>
+  <p class="sub">اینها تفاوت‌های ادعایی نیستند؛ هرکدام یک محاسبه مشخص است که
+  می‌توانید راستی‌آزمایی کنید.</p>
+  <div class="feats">
+    <div class="feat">
+      <b><span class="only">اختصاصی</span>دلار ضمنی بازار طلا</b>
+      <p>از قیمت سکه، نرخ دلاری که بازار طلا دارد رویش حساب می‌کند را برعکس
+      استخراج می‌کنیم. وقتی این نرخ از دلار بازار فاصله می‌گیرد، یعنی یکی از دو
+      بازار جلوتر افتاده.</p>
+    </div>
+    <div class="feat">
+      <b><span class="only">اختصاصی</span>جدول مقایسه‌ای بر مبنای گرم خالص</b>
+      <p>«حباب سکه ۱۲٪» یک عدد است. اینکه «ربع‌سکه به ازای هر گرم طلای خالص
+      ۱۳٪ گران‌تر از آب‌شده است» یک تصمیم است.</p>
+    </div>
+    <div class="feat">
+      <b><span class="only">اختصاصی</span>سناریوی جمع‌شدن حباب</b>
+      <p>قیمت طلا را ثابت نگه می‌داریم و فقط می‌پرسیم اگر حباب به حالت عادی
+      برگردد چه می‌شود. این ریسکی است که معمولاً هیچ‌جا اندازه‌گیری نمی‌شود.</p>
+    </div>
+    <div class="feat">
+      <b><span class="only">اختصاصی</span>تشخیص خطای داده</b>
+      <p>اگر منابع با هم نخوانند، اگر قیمتی کهنه باشد، یا اگر عددی به تومان
+      به‌جای ریال وارد شده باشد، صفحه به شما می‌گوید — به‌جای اینکه با اطمینان
+      عدد غلط نشان دهد.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>داده از کجا می‌آید</h2>
+  <p class="sub">هر عددی که می‌بینید منبع دارد. این بخش را می‌توانید همین حالا
+  خودتان چک کنید.</p>
+  <div class="two">
+    <div class="card does">
+      <h3>لنگرهای لحظه‌ای</h3>
+      <ul>
+        <li>نرخ دلار: میانه سه صرافی مستقل ایرانی</li>
+        <li>طلای جهانی: میانه توکن‌های طلا در پنج صرافی بین‌المللی</li>
+        <li>میانه می‌گیریم نه میانگین — یک قیمت کهنه نمی‌تواند لنگر را بکشد</li>
+        <li>اسپرد واقعی از دفتر سفارش، نه تخمین</li>
+      </ul>
+    </div>
+    <div class="card does">
+      <h3>مشخصات و تاریخچه</h3>
+      <ul>
+        <li>وزن و عیار سکه‌ها از استاندارد منتشرشده بانک مرکزی</li>
+        <li>این اعداد ثابت فیزیکی‌اند — کالیبره نمی‌شوند و کهنه نمی‌شوند</li>
+        <li>تاریخچه حباب از بیش از ۲٬۴۰۰ روز داده روزانه</li>
+        <li>صدک در چهار بازه نشان داده می‌شود تا حساسیت پنهان نماند</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>قیمت</h2>
+  <p class="sub">نسخه رایگان محدودشده نیست که مجبورتان کند ارتقا بدهید — خودش
+  کامل کار می‌کند. نسخه‌های بالاتر برای کسی است که وقت رصد کردن ندارد یا موجودی
+  نگه می‌دارد.</p>
+  <div class="tiers"><div class="tier"><h3>رایگان</h3><p class="px">0</p><p class="un">همیشه رایگان</p><p class="for">هر کسی که می‌خواهد بداند امروز طلا را چطور بخرد</p><ul><li>قطب‌نمای زنده بازار</li><li>جدول حباب همه سکه‌ها و طلا</li><li>مقایسه بر مبنای گرم طلای خالص</li><li>هشدار کهنگی و ناسازگاری داده</li></ul><a class="btn ghost" href="https://claude.ai/code/artifact/dd4b8d42-6081-4370-bb2e-eb80b207c5c4">استفاده کنید</a></div><div class="tier hi"><span class="tag">پرطرفدار</span><h3>حرفه‌ای</h3><p class="px">390,000</p><p class="un">تومان / ماه</p><p class="for">سرمایه‌گذار فعالی که نمی‌خواهد بازار را دستی رصد کند</p><ul><li>هشدار تلگرام روی تغییرات مهم</li><li>کنسول ارزش‌گذاری موجودی</li><li>سناریوی جمع‌شدن حباب</li><li>تاریخچه و صدک حباب در چهار بازه</li><li>دلار ضمنی بازار طلا</li></ul><a class="btn" href="#contact">شروع کنید</a></div><div class="tier"><h3>کسب‌وکار</h3><p class="px">2,900,000</p><p class="un">تومان / ماه</p><p class="for">طلافروشی، صرافی و مجموعه‌هایی که موجودی نگه می‌دارند</p><ul><li>همه امکانات حرفه‌ای</li><li>کنسول طلافروش با موجودی اختصاصی</li><li>خروجی <span lang="en">JSON</span> برای اتصال به سیستم خودتان</li><li>گزارش روزانه با برند شما</li><li>چند کاربر</li><li>پشتیبانی مستقیم</li></ul><a class="btn ghost" href="#contact">تماس بگیرید</a></div></div>
+</section>
+
+<section id="contact">
+  <h2>سؤال‌هایی که واقعاً می‌پرسند</h2>
+  <div class="faq"><b>از کجا بدانم اعدادتان درست است؟</b>
+  <p>فرمول‌ها روی صفحه نوشته شده و ورودی‌ها همه عمومی‌اند. وزن و عیار سکه استاندارد
+  منتشرشده است، قیمت‌ها از صرافی‌هایی می‌آید که خودتان می‌توانید ببینید. اگر عددی
+  با محاسبه شما نخواند، بگویید تا بررسی کنیم.</p></div>
+  <div class="faq"><b>یعنی به من می‌گویید کِی بخرم؟</b>
+  <p>نه. می‌گوییم اگر امروز بخرید، کدام مسیر ارزان‌تر تمام می‌شود و چقدرش حباب
+  است. تصمیم خرید و زمان‌بندی با خودتان است.</p></div>
+  <div class="faq"><b>موجودی من جایی ذخیره می‌شود؟</b>
+  <p>خیر. کنسول طلافروش کاملاً داخل مرورگر خودتان کار می‌کند و موجودی به هیچ
+  سروری ارسال نمی‌شود.</p></div>
+  <div class="faq"><b>چرا گاهی می‌گوید «نمی‌دانم»؟</b>
+  <p>چون گاهی واقعاً داده کافی نیست. ترجیح می‌دهیم این را بگوییم تا اینکه عددی
+  بسازیم که شما رویش تصمیم بگیرید.</p></div>
+  <div class="faq"><b>چطور شروع کنم؟</b><p>فعلاً از طریق همین صفحه و لینک‌های بالا. برای نسخه کسب‌وکار مستقیم تماس بگیرید.</p></div>
+</section>
+
+<footer>
+  <p><b>وضعیت:</b> این محصول در مرحله پیش‌عرضه است. هیچ آمار کاربر، رضایت‌نامه یا
+  سابقه بازدهی روی این صفحه نیست چون هنوز چنین چیزی وجود ندارد — و وقتی وجود
+  داشت، با منبع منتشر می‌شود.</p>
+  <p><b>هشدار:</b> این ابزار تحلیل ارزش نسبی بر پایه داده عمومی است و مشاوره
+  سرمایه‌گذاری نیست. تصمیم خرید و فروش و مسئولیت آن با خود شماست. بازار طلا و ارز
+  پرنوسان است و امکان زیان وجود دارد.</p>
+  <p class="mn">generated 2026-08-23 14:24 <span lang="en">Tehran</span></p>
+</footer>
+
+</div>

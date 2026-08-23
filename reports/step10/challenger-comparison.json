@@ -1,0 +1,121 @@
+{
+  "report_version": "0.1.0",
+  "validation_type": "CHALLENGER_ONLY_NOT_HUMAN",
+  "rows": [
+    {
+      "packet_id": "PKT-001",
+      "snapshot_id": "SNAP-HIST-20260806-002",
+      "as_of": "2026-08-06T20:00:00+00:00",
+      "system_fx": "UNKNOWN",
+      "challenger_fx": "UNKNOWN",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    },
+    {
+      "packet_id": "PKT-002",
+      "snapshot_id": "SNAP-HIST-20260808-003",
+      "as_of": "2026-08-08T20:00:00+00:00",
+      "system_fx": "UNKNOWN",
+      "challenger_fx": "UNKNOWN",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    },
+    {
+      "packet_id": "PKT-003",
+      "snapshot_id": "SNAP-HIST-20260809-004",
+      "as_of": "2026-08-09T20:00:00+00:00",
+      "system_fx": "DOWNTREND",
+      "challenger_fx": "DOWNTREND",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    },
+    {
+      "packet_id": "PKT-004",
+      "snapshot_id": "SNAP-HIST-20260810-005",
+      "as_of": "2026-08-10T20:00:00+00:00",
+      "system_fx": "TRANSITION",
+      "challenger_fx": "TRANSITION",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    },
+    {
+      "packet_id": "PKT-005",
+      "snapshot_id": "SNAP-HIST-20260811-006",
+      "as_of": "2026-08-11T20:00:00+00:00",
+      "system_fx": "UPTREND",
+      "challenger_fx": "UPTREND",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    },
+    {
+      "packet_id": "PKT-006",
+      "snapshot_id": "SNAP-HIST-20260815-007",
+      "as_of": "2026-08-15T20:00:00+00:00",
+      "system_fx": "TRANSITION",
+      "challenger_fx": "TRANSITION",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    },
+    {
+      "packet_id": "PKT-007",
+      "snapshot_id": "SNAP-HIST-20260816-008",
+      "as_of": "2026-08-16T20:00:00+00:00",
+      "system_fx": "DOWNTREND",
+      "challenger_fx": "DOWNTREND",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    },
+    {
+      "packet_id": "PKT-008",
+      "snapshot_id": "SNAP-HIST-20260817-009",
+      "as_of": "2026-08-17T20:00:00+00:00",
+      "system_fx": "DOWNTREND",
+      "challenger_fx": "DOWNTREND",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    },
+    {
+      "packet_id": "PKT-009",
+      "snapshot_id": "SNAP-HIST-20260818-010",
+      "as_of": "2026-08-18T20:00:00+00:00",
+      "system_fx": "TRANSITION",
+      "challenger_fx": "TRANSITION",
+      "fx_match": true,
+      "system_xau": "UNKNOWN",
+      "challenger_xau": "UNKNOWN",
+      "xau_match": true,
+      "note": "Challenger uses past-only close sequences; not a Golden human label."
+    }
+  ],
+  "summary": {
+    "n": 9,
+    "fx_matches": 9,
+    "xau_matches": 9,
+    "fx_disagreements": 0,
+    "xau_disagreements": 0
+  }
+}

@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# never commit real credentials — only the example
+.env
+.env.*
+!.env*.example
+
+# build staging must never be committed
+public.staging/
+
+*.log
+.DS_Store
+Thumbs.db

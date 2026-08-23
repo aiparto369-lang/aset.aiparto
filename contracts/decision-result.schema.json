@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/decision-result.schema.json",
+  "title": "Capital Compass Decision Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "allowed_actions",
+    "preferred_action",
+    "size_capability",
+    "reason_codes",
+    "invalidation",
+    "review_triggers",
+    "audit_id"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "pattern": "^DEC-[A-Z0-9._:-]+$"
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "ACCUMULATE",
+          "STAGED_ENTRY",
+          "TACTICAL_ENTRY",
+          "HOLD",
+          "WAIT",
+          "REDUCE",
+          "EXIT",
+          "AVOID",
+          "INSUFFICIENT_EDGE",
+          "DECISION_BLOCKED"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "preferred_action": {
+      "enum": [
+        "ACCUMULATE",
+        "STAGED_ENTRY",
+        "TACTICAL_ENTRY",
+        "HOLD",
+        "WAIT",
+        "REDUCE",
+        "EXIT",
+        "AVOID",
+        "INSUFFICIENT_EDGE",
+        "DECISION_BLOCKED"
+      ]
+    },
+    "size_capability": {
+      "enum": [
+        "ZERO",
+        "PROBE",
+        "SMALL",
+        "MODERATE",
+        "LARGE_ELIGIBLE"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^RC-[A-Z0-9-]+$"
+      },
+      "uniqueItems": true
+    },
+    "invalidation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "review_triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "audit_id": {
+      "type": "string",
+      "pattern": "^AUD-[A-Z0-9._:-]+$"
+    }
+  }
+}

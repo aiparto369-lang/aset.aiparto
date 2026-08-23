@@ -1,0 +1,244 @@
+{
+  "snapshot_id": "SNAP-LIVE-20260822-001",
+  "as_of": "2026-08-22T20:39:00+00:00",
+  "immutable": true,
+  "market_state": {
+    "iran_session": "CLOSED",
+    "xau_session": "CLOSED"
+  },
+  "evidence": {
+    "xauusd": [
+      {
+        "evidence_id": "EV-LIVE-001-XAU-INVESTING",
+        "variable_id": "XAUUSD",
+        "asset": "GOLD",
+        "market": "GLOBAL",
+        "value": 4603.56,
+        "unit": "USD_PER_TROY_OUNCE",
+        "quote_type": "CLOSE",
+        "observation_time": "2026-08-21T23:59:59+00:00",
+        "retrieval_time": "2026-08-22T20:39:00+00:00",
+        "source": {
+          "source_id": "SRC-INVESTING-PUBLIC",
+          "class": "MARKET_OBSERVATION",
+          "origin_id": "investing:xau-usd-historical:2026-08-21",
+          "name": "Investing.com",
+          "uri": "https://www.investing.com/currencies/xau-usd-historical-data"
+        },
+        "quality": {
+          "freshness": "LATEST_RELEASE",
+          "verification": "VERIFIED",
+          "conflict": "NONE",
+          "quality_class": "DQ-B"
+        },
+        "materiality": "M1",
+        "lineage": {
+          "raw_reference": "Investing.com XAU/USD historical table: Aug 21 2026 close 4,603.56",
+          "derived": false,
+          "formula_id": null,
+          "formula_version": null,
+          "input_evidence_ids": []
+        },
+        "limitations": [
+          "This is the latest observed daily close, not a live executable spot quote.",
+          "The pilot date is Saturday; global spot market is not treated as open/live."
+        ]
+      }
+    ],
+    "usd_irr": [
+      {
+        "evidence_id": "EV-LIVE-001-USD-TGJU",
+        "variable_id": "USD_IRR_FREE_MARKET",
+        "asset": "USD_IRR",
+        "market": "IRAN_FREE_MARKET",
+        "value": 1927000.0,
+        "unit": "IRR_PER_USD",
+        "quote_type": "REFERENCE",
+        "observation_time": "2026-08-22T16:29:59+00:00",
+        "retrieval_time": "2026-08-22T20:39:00+00:00",
+        "source": {
+          "source_id": "SRC-TGJU",
+          "class": "MARKET_OBSERVATION",
+          "origin_id": "tgju:price_dollar_rl:2026-08-22:19:59:59-IR",
+          "name": "TGJU",
+          "uri": "https://www.tgju.org/profile/price_dollar_rl"
+        },
+        "quality": {
+          "freshness": "LATEST_RELEASE",
+          "verification": "PARTIAL",
+          "conflict": "NONE",
+          "quality_class": "DQ-B"
+        },
+        "materiality": "M1",
+        "lineage": {
+          "raw_reference": "TGJU current-rate table, 2026-08-22 19:59:59 Iran local",
+          "derived": false,
+          "formula_id": null,
+          "formula_version": null,
+          "input_evidence_ids": []
+        },
+        "limitations": [
+          "Only one exact parsed free-market FX observation is available in this pilot record.",
+          "Bonbast was checked as an independent route, but the parsed page did not expose numeric USD buy/sell values; no value was invented.",
+          "This is a market observation, not an official government FX rate."
+        ]
+      }
+    ],
+    "gold_18k": [
+      {
+        "evidence_id": "EV-LIVE-001-GOLD18-TGJU",
+        "variable_id": "GOLD_18K_IRR_GRAM",
+        "asset": "GOLD_18K",
+        "market": "IRAN",
+        "value": 210360000.0,
+        "unit": "IRR_PER_GRAM",
+        "quote_type": "REFERENCE",
+        "observation_time": "2026-08-22T16:29:57+00:00",
+        "retrieval_time": "2026-08-22T20:39:00+00:00",
+        "source": {
+          "source_id": "SRC-TGJU",
+          "class": "MARKET_OBSERVATION",
+          "origin_id": "tgju:geram18:2026-08-22:19:59:57-IR",
+          "name": "TGJU",
+          "uri": "https://www.tgju.org/profile/geram18"
+        },
+        "quality": {
+          "freshness": "LATEST_RELEASE",
+          "verification": "PARTIAL",
+          "conflict": "NONE",
+          "quality_class": "DQ-B"
+        },
+        "materiality": "M1",
+        "lineage": {
+          "raw_reference": "TGJU current-rate table, 2026-08-22 19:59:57 Iran local",
+          "derived": false,
+          "formula_id": null,
+          "formula_version": null,
+          "input_evidence_ids": []
+        },
+        "limitations": [
+          "Single observed domestic source in this pilot record."
+        ]
+      }
+    ],
+    "melted_gold": [],
+    "emami_coin": [
+      {
+        "evidence_id": "EV-LIVE-001-COIN-TGJU",
+        "variable_id": "EMAMI_COIN_IRR",
+        "asset": "EMAMI_COIN",
+        "market": "IRAN",
+        "value": 2090200000.0,
+        "unit": "IRR_PER_COIN",
+        "quote_type": "REFERENCE",
+        "observation_time": "2026-08-22T16:29:59+00:00",
+        "retrieval_time": "2026-08-22T20:39:00+00:00",
+        "source": {
+          "source_id": "SRC-TGJU",
+          "class": "MARKET_OBSERVATION",
+          "origin_id": "tgju:sekee:2026-08-22:19:59:59-IR",
+          "name": "TGJU",
+          "uri": "https://www.tgju.org/profile/sekee"
+        },
+        "quality": {
+          "freshness": "LATEST_RELEASE",
+          "verification": "PARTIAL",
+          "conflict": "NONE",
+          "quality_class": "DQ-B"
+        },
+        "materiality": "M2",
+        "lineage": {
+          "raw_reference": "TGJU current-rate table, 2026-08-22 19:59:59 Iran local",
+          "derived": false,
+          "formula_id": null,
+          "formula_version": null,
+          "input_evidence_ids": []
+        },
+        "limitations": [
+          "Coin premium cannot be classified without a validated coin-spec calculation and baseline in this pilot record."
+        ]
+      }
+    ]
+  },
+  "derived": {
+    "implied_gold_value": {
+      "evidence_id": "EV-LIVE-001-IMPLIED18K",
+      "variable_id": "GOLD_18K_IMPLIED_IRR_GRAM",
+      "asset": "GOLD_18K",
+      "market": "IRAN",
+      "value": 213908404.28,
+      "unit": "IRR_PER_GRAM",
+      "quote_type": "REFERENCE",
+      "observation_time": "2026-08-22T20:39:00+00:00",
+      "retrieval_time": "2026-08-22T20:39:00+00:00",
+      "source": {
+        "source_id": "SRC-DERIVED",
+        "class": "PROFESSIONAL_MARKET_DATA",
+        "origin_id": "formula:GOLD18-IMPLIED:v0.1.0",
+        "name": "Capital Compass Calculation Service",
+        "uri": null
+      },
+      "quality": {
+        "freshness": "LATEST_RELEASE",
+        "verification": "VERIFIED",
+        "conflict": "NONE",
+        "quality_class": "DQ-B"
+      },
+      "materiality": "M2",
+      "lineage": {
+        "raw_reference": null,
+        "derived": true,
+        "formula_id": "GOLD18-IMPLIED",
+        "formula_version": "0.1.0",
+        "input_evidence_ids": [
+          "EV-LIVE-001-XAU-INVESTING",
+          "EV-LIVE-001-USD-TGJU"
+        ]
+      },
+      "limitations": [
+        "Uses latest daily XAU close rather than a live spot quote.",
+        "Does not include local transaction costs or instrument-specific market frictions."
+      ]
+    },
+    "gold_premium": {
+      "evidence_id": "EV-LIVE-001-GOLD18-PREMIUM",
+      "variable_id": "GOLD_18K_OBSERVED_VS_IMPLIED_PREMIUM",
+      "asset": "GOLD_18K",
+      "market": "IRAN",
+      "value": -0.01658843,
+      "unit": "FRACTION",
+      "quote_type": "REFERENCE",
+      "observation_time": "2026-08-22T20:39:00+00:00",
+      "retrieval_time": "2026-08-22T20:39:00+00:00",
+      "source": {
+        "source_id": "SRC-DERIVED",
+        "class": "PROFESSIONAL_MARKET_DATA",
+        "origin_id": "formula:GOLD18-PREMIUM:v0.1.0",
+        "name": "Capital Compass Calculation Service",
+        "uri": null
+      },
+      "quality": {
+        "freshness": "LATEST_RELEASE",
+        "verification": "VERIFIED",
+        "conflict": "NONE",
+        "quality_class": "DQ-C"
+      },
+      "materiality": "M2",
+      "lineage": {
+        "raw_reference": null,
+        "derived": true,
+        "formula_id": "GOLD18-PREMIUM",
+        "formula_version": "0.1.0",
+        "input_evidence_ids": [
+          "EV-LIVE-001-GOLD18-TGJU",
+          "EV-LIVE-001-IMPLIED18K"
+        ]
+      },
+      "limitations": [
+        "Premium classification is intentionally UNKNOWN because no validated historical/regime baseline has been calibrated yet."
+      ]
+    },
+    "coin_premium": null
+  },
+  "events": []
+}

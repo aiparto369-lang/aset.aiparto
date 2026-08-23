@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/decision-input.schema.json",
+  "title": "Capital Compass Decision Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "snapshot_id",
+    "asset",
+    "instrument",
+    "horizon",
+    "states",
+    "constraints"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "pattern": "^DEC-[A-Z0-9._:-]+$"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^SNAP-[A-Z0-9._:-]+$"
+    },
+    "asset": {
+      "type": "string",
+      "enum": [
+        "IRAN_GOLD",
+        "USD_IRR"
+      ]
+    },
+    "instrument": {
+      "type": "string",
+      "enum": [
+        "GOLD_18K",
+        "MELTED_GOLD",
+        "EMAMI_COIN",
+        "USD_CASH",
+        "NOT_APPLICABLE"
+      ]
+    },
+    "horizon": {
+      "type": "string",
+      "enum": [
+        "TACTICAL",
+        "INTERMEDIATE",
+        "STRATEGIC"
+      ]
+    },
+    "states": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_state",
+        "fx_price",
+        "xau_price",
+        "gold_premium",
+        "coin_premium",
+        "fx_stress",
+        "timing",
+        "evidence_conflict"
+      ],
+      "properties": {
+        "data_state": {
+          "enum": [
+            "READY",
+            "READY_LIMITED",
+            "REVIEW_REQUIRED",
+            "BLOCKED"
+          ]
+        },
+        "fx_price": {
+          "enum": [
+            "UPTREND",
+            "DOWNTREND",
+            "RANGE",
+            "TRANSITION",
+            "DISLOCATED",
+            "UNKNOWN"
+          ]
+        },
+        "xau_price": {
+          "enum": [
+            "UPTREND",
+            "DOWNTREND",
+            "RANGE",
+            "TRANSITION",
+            "EXTENDED_UP",
+            "EXTENDED_DOWN",
+            "UNKNOWN"
+          ]
+        },
+        "gold_premium": {
+          "enum": [
+            "LOW",
+            "NORMAL",
+            "HIGH",
+            "UNKNOWN"
+          ]
+        },
+        "coin_premium": {
+          "enum": [
+            "LOW",
+            "NORMAL",
+            "HIGH",
+            "UNKNOWN"
+          ]
+        },
+        "fx_stress": {
+          "enum": [
+            "NORMAL",
+            "ELEVATED",
+            "HIGH",
+            "DISLOCATED",
+            "UNKNOWN"
+          ]
+        },
+        "timing": {
+          "enum": [
+            "SETUP_FORMING",
+            "SETUP_CONFIRMED",
+            "RETESTING",
+            "EXTENDED",
+            "INVALIDATED",
+            "NO_SETUP",
+            "UNKNOWN"
+          ]
+        },
+        "evidence_conflict": {
+          "enum": [
+            "NONE",
+            "MINOR",
+            "MATERIAL",
+            "CRITICAL"
+          ]
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "risk",
+        "portfolio",
+        "event"
+      ],
+      "properties": {
+        "risk": {
+          "enum": [
+            "NONE",
+            "SIZE_LIMIT",
+            "ENTRY_LIMIT",
+            "REDUCE_REQUIRED",
+            "BLOCK",
+            "UNKNOWN"
+          ]
+        },
+        "portfolio": {
+          "enum": [
+            "NONE",
+            "NO_INCREASE",
+            "REDUCE",
+            "BLOCK",
+            "UNKNOWN"
+          ]
+        },
+        "event": {
+          "enum": [
+            "NONE",
+            "CAUTION",
+            "LIMIT_ENTRY",
+            "BLOCK",
+            "UNKNOWN"
+          ]
+        }
+      }
+    },
+    "existing_position": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "SMALL",
+        "MODERATE",
+        "LARGE",
+        "UNKNOWN"
+      ],
+      "default": "UNKNOWN"
+    }
+  }
+}

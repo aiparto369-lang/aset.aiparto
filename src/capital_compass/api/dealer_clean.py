@@ -1,0 +1,345 @@
+"""
+Dealer console — licence-clean build.
+
+The earlier console was called licence-clean because its prices were editable,
+but it still seeded them from TGJU. Editable defaults from a prohibited source
+are still use of that source. This build takes nothing from an aggregator: the
+only figure it receives is the reference — what one gram of pure gold is worth —
+computed from exchange public APIs, and every market price is the dealer's own.
+
+Three things a dealer does every day that this now covers:
+
+  1. Value the safe.        What is in there, how much of it is gold, how much
+                            is premium that can evaporate.
+  2. Price a purchase.      Given today's reference, what is the most I can pay
+                            for this coin and still be at the premium I want?
+  3. See both sides.        Dealers quote buy and sell. The spread is the
+                            business, so the tool works in two columns, not one.
+
+Point 2 is the one that turns this from a report into a tool. A dealer who knows
+the reference can compute a fair bid in their head; one who is quoting forty
+times a day cannot, and that is where the premium creeps in.
+"""
+from __future__ import annotations
+
+import json
+from datetime import datetime, timezone
+
+from capital_compass.api.compass_ui import stamp_fa
+from capital_compass.market.instruments import INSTRUMENTS
+
+# Instruments a dealer actually trades, in the order they think about them.
+DEALER_INSTRUMENTS = ("SEKKE_EMAMI", "SEKKE_BAHAR", "NIM_SEKKE", "ROB_SEKKE",
+                      "SEKKE_GERAMI", "ABSHODE", "MESGHAL_17", "GOLD_18K")
+
+CSS = """
+:root{--ink:#05080C;--s1:#0C131B;--s2:#131C26;--s3:#1A242F;--etch:#1A2531;
+--etch2:#26333F;--txt:#E2EAF1;--txt2:#8B9BA9;--txt3:#7E8F9E;
+--brass:#C9A227;--brass2:#B89430;--glow:#5BE0C8;--warn:#E0B341;
+--bad:#F2604E;--good:#5BD6A0;--buy:#5BD6A0;--sell:#E8A33D;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--txt);direction:rtl;text-align:right;
+font-family:Vazirmatn,"IRANSansX","Segoe UI",Tahoma,sans-serif;line-height:1.8;
+padding:22px 14px 70px;font-size:15px}
+.w{max-width:1040px;margin:0 auto}
+.mn{font-family:"JetBrains Mono",Consolas,monospace;direction:ltr;unicode-bidi:isolate;
+font-variant-numeric:tabular-nums}
+.hd{border-bottom:1px solid var(--etch2);padding-bottom:13px;margin-bottom:12px}
+h1{margin:0 0 3px;font-size:clamp(19px,3.6vw,25px);font-weight:800}
+h1 span{color:var(--brass);font-weight:400}
+.sub{margin:0;font-size:12.5px;color:var(--txt3)}
+.refbar{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+border:1px solid var(--brass2);background:linear-gradient(180deg,var(--s2),var(--s1));
+margin:16px 0 8px}
+.refbar>div{padding:14px 16px;border-inline-end:1px solid var(--etch2)}
+.refbar>div:last-child{border-inline-end:0}
+.refbar dt{font-size:10px;letter-spacing:.09em;color:var(--txt3);margin:0 0 4px}
+.refbar dd{margin:0;font-size:19px;font-weight:700;font-family:"JetBrains Mono",monospace;
+direction:ltr;text-align:right;color:var(--brass)}
+.refbar dd small{font-size:10.5px;color:var(--txt3);font-weight:400;margin-inline-start:3px}
+.lic{font-size:11.5px;color:var(--txt3);border-inline-start:2px solid var(--glow);
+padding-inline-start:11px;margin:0 0 22px;line-height:1.75}
+h2{font-size:14.5px;margin:28px 0 10px;font-weight:700;padding-top:18px;
+border-top:1px solid var(--etch2)}
+.tabs{display:flex;gap:0;border:1px solid var(--etch2);margin-bottom:0}
+.tabs button{flex:1;background:var(--s1);border:0;border-inline-end:1px solid var(--etch2);
+color:var(--txt3);padding:12px;font-family:inherit;font-size:13.5px;font-weight:700;
+cursor:pointer}
+.tabs button:last-child{border-inline-end:0}
+.tabs button[aria-selected="true"]{background:var(--s3);color:var(--glow)}
+.tabs button:focus-visible{outline:2px solid var(--glow);outline-offset:-2px}
+.pane{border:1px solid var(--etch2);border-top:0;padding:0}
+.pane[hidden]{display:none}
+.rowhead,.row{display:grid;grid-template-columns:1.5fr 84px 122px 122px 1fr;gap:10px;
+align-items:center;padding:10px 14px;border-bottom:1px solid var(--etch)}
+.rowhead{background:var(--s2);font-size:10.5px;color:var(--txt3);letter-spacing:.04em}
+.row:last-child{border-bottom:0}
+.row .nm{font-weight:600;font-size:14px}
+.row .nm small{display:block;color:var(--txt3);font-size:11px;font-weight:400}
+.row input{width:100%;background:var(--s2);border:1px solid var(--etch2);color:var(--txt);
+padding:8px 9px;font-size:14px;text-align:center;
+font-family:"JetBrains Mono",monospace;border-radius:0}
+.row input:focus{outline:none;border-color:var(--glow)}
+.row input.buy:focus{border-color:var(--buy)}
+.row input.sell:focus{border-color:var(--sell)}
+.row .out{text-align:left;font-family:"JetBrains Mono",monospace;font-size:12.5px;
+color:var(--txt2);direction:ltr}
+.row .out b{display:block;color:var(--txt);font-size:14px}
+.row .out s{text-decoration:none;font-size:11px}
+.row .out s.hi{color:var(--bad)}.row .out s.ok{color:var(--good)}
+.tot{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
+border:1px solid var(--etch2);border-top:0;background:var(--s1)}
+.tot>div{padding:14px 16px;border-inline-end:1px solid var(--etch2)}
+.tot>div:last-child{border-inline-end:0}
+.tot dt{font-size:10px;letter-spacing:.09em;color:var(--txt3);margin:0 0 4px}
+.tot dd{margin:0;font-size:18px;font-weight:700;font-family:"JetBrains Mono",monospace;
+direction:ltr;text-align:right}
+.tot dd.risk{color:var(--warn)}
+.tot dd small{font-size:10.5px;color:var(--txt3);font-weight:400;margin-inline-start:3px}
+.ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 0}
+.ctl label{font-size:12.5px;color:var(--txt2)}
+.ctl input[type=number]{width:82px;background:var(--s2);border:1px solid var(--etch2);
+color:var(--txt);padding:7px 9px;text-align:center;font-family:"JetBrains Mono",monospace}
+button.act{background:none;border:1px solid var(--etch2);color:var(--txt3);
+padding:7px 14px;font-family:inherit;font-size:12.5px;cursor:pointer}
+button.act:hover{border-color:var(--brass2);color:var(--brass)}
+button.act:focus-visible{outline:2px solid var(--glow);outline-offset:2px}
+.stress{border:1px solid var(--etch2);margin-bottom:10px}
+.sh{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;
+padding:13px 16px;border-bottom:1px solid var(--etch)}
+.sh b{font-size:13.5px}
+.sh .d{font-family:"JetBrains Mono",monospace;font-size:16px;font-weight:700;direction:ltr}
+.sh .d.neg{color:var(--bad)}.sh .d.pos{color:var(--good)}
+.sn{padding:11px 16px;font-size:12px;color:var(--txt3);line-height:1.7}
+.empty{color:var(--txt3);font-size:13px;padding:16px 0}
+footer{border-top:1px solid var(--etch2);margin-top:30px;padding-top:16px;
+color:var(--txt3);font-size:11.5px}
+footer p{margin:0 0 8px;line-height:1.85}
+footer b{color:var(--txt2)}
+@media(max-width:700px){
+  .rowhead,.row{grid-template-columns:1fr 70px 1fr;gap:8px}
+  .rowhead span:nth-child(4),.row .sellcell{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+"""
+
+JS = r"""
+const F=new Intl.NumberFormat('en-US');
+const $=i=>document.getElementById(i);
+const money=t=>F.format(Math.round(t));
+const pct=(x,d)=>(x>=0?'+':'')+(x*100).toFixed(d===undefined?1:d)+'٪';
+
+function store(){try{return JSON.parse(localStorage.getItem('cc_dealer')||'{}');}catch(e){return{};}}
+function save(v){try{localStorage.setItem('cc_dealer',JSON.stringify(v));}catch(e){}}
+
+function tab(name){
+  for(const t of ['hold','quote']){
+    $('tab_'+t).setAttribute('aria-selected', String(t===name));
+    $('pane_'+t).hidden = (t!==name);
+  }
+}
+
+function compute(){
+  const st={};
+  let mv=0,iv=0,fg=0; const lines=[];
+  for(const it of ITEMS){
+    const q=parseFloat(($('q_'+it.id)||{}).value)||0;
+    const b=(parseFloat(($('b_'+it.id)||{}).value)||0)*10;
+    const s=(parseFloat(($('s_'+it.id)||{}).value)||0)*10;
+    const intr=it.fine*REF;
+    const ie=$('i_'+it.id); if(ie) ie.textContent=money(intr/10);
+    if(q>0||b>0||s>0) st[it.id]={q:q,b:b/10,s:s/10};
+
+    const out=$('o_'+it.id);
+    if(out){
+      if(q>0&&b>0){
+        const prem=(b-intr)/intr;
+        out.innerHTML='<b>'+money(q*b/10)+'</b><s class="'+(prem>0.05?'hi':'ok')+'">حباب '+pct(prem)+'</s>';
+      } else if(b>0){
+        const prem=(b-intr)/intr;
+        out.innerHTML='<s class="'+(prem>0.05?'hi':'ok')+'">حباب '+pct(prem)+'</s>';
+      } else out.innerHTML='<s>—</s>';
+    }
+    // spread readout on the quote pane
+    const sp=$('sp_'+it.id);
+    if(sp) sp.textContent = (b>0&&s>0&&s>=b) ? pct((s-b)/b) : '—';
+    // max bid at the target premium
+    const tp=(parseFloat(($('target')||{}).value)||0)/100;
+    const mb=$('mb_'+it.id);
+    if(mb) mb.textContent = REF>0 ? money(intr*(1+tp)/10) : '—';
+
+    if(q>0&&b>0){ mv+=q*b; iv+=q*intr; fg+=q*it.fine; lines.push({fa:it.fa,n:q*intr,m:q*b}); }
+  }
+  save(st);
+
+  const pv=mv-iv;
+  $('t_market').textContent=money(mv/10);
+  $('t_intrinsic').textContent=money(iv/10);
+  $('t_premium').textContent=money(pv/10);
+  $('t_share').textContent= mv>0?pct(pv/mv):'—';
+  $('t_grams').textContent= fg.toFixed(1);
+
+  const box=$('stressbox');
+  if(mv<=0){ box.innerHTML='<div class="empty">تعداد و قیمت خرید را وارد کنید تا سناریوها محاسبه شود.</div>'; return; }
+  let h='';
+  for(const sc of SCENARIOS){
+    let after=0; for(const l of lines) after+=l.n*(1+sc.target);
+    const d=after-mv;
+    h+='<div class="stress"><div class="sh"><b>'+sc.label+'</b><span class="d '+(d<0?'neg':'pos')+'">'
+      +(d<0?'':'+')+money(d/10)+' تومان ('+pct(d/mv)+')</span></div><div class="sn">'+sc.note+'</div></div>';
+  }
+  box.innerHTML=h;
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const st=store();
+  for(const it of ITEMS){
+    const v=st[it.id]||{};
+    const q=$('q_'+it.id), b=$('b_'+it.id), s=$('s_'+it.id);
+    if(q&&v.q) q.value=v.q;
+    if(b&&v.b) b.value=v.b;
+    if(s&&v.s) s.value=v.s;
+    for(const el of [q,b,s]) if(el) el.addEventListener('input',compute);
+  }
+  $('target').addEventListener('input',compute);
+  $('tab_hold').addEventListener('click',()=>tab('hold'));
+  $('tab_quote').addEventListener('click',()=>tab('quote'));
+  $('clear').addEventListener('click',()=>{
+    for(const it of ITEMS) for(const p of ['q_','b_','s_'])
+      { const el=$(p+it.id); if(el) el.value=''; }
+    compute();
+  });
+  tab('hold'); compute();
+});
+"""
+
+
+def render(reference, *, scenario_median: float | None = None) -> str:
+    """
+    `reference` is a clean_reference.Reference — the ONLY external figure used.
+    No instrument price is supplied by this page.
+    """
+    now = datetime.now(timezone.utc)
+    ref_irr = reference.irr_per_gram or 0.0
+
+    items, hold_rows, quote_rows = [], [], []
+    for iid in DEALER_INSTRUMENTS:
+        inst = INSTRUMENTS.get(iid)
+        if not inst:
+            continue
+        items.append({"id": iid, "fa": inst.fa, "fine": inst.fine_grams})
+        unit = "گرم" if inst.quote_unit.endswith("GRAM") else (
+            "مثقال" if "MESGHAL" in inst.quote_unit else "عدد")
+        hold_rows.append(
+            f'<div class="row"><div class="nm">{inst.fa}'
+            f'<small>ارزش طلای داخلش: <span id="i_{iid}">—</span> ت</small></div>'
+            f'<input id="q_{iid}" type="number" min="0" step="any" inputmode="decimal" '
+            f'placeholder="0" aria-label="تعداد {inst.fa} ({unit})">'
+            f'<input id="b_{iid}" class="buy" type="number" min="0" step="any" '
+            f'inputmode="decimal" placeholder="قیمت خرید" '
+            f'aria-label="قیمت خرید {inst.fa} به تومان">'
+            f'<input id="s_{iid}" class="sell sellcell" type="number" min="0" step="any" '
+            f'inputmode="decimal" placeholder="قیمت فروش" '
+            f'aria-label="قیمت فروش {inst.fa} به تومان">'
+            f'<div class="out" id="o_{iid}"><s>—</s></div></div>'
+        )
+        quote_rows.append(
+            f'<div class="row"><div class="nm">{inst.fa}'
+            f'<small>هر {unit} · {inst.fine_grams:.4f} گرم طلای خالص</small></div>'
+            f'<div class="out"><s>اسپرد</s><b id="sp_{iid}">—</b></div>'
+            f'<div class="out"><s>حداکثر قیمت خرید</s><b id="mb_{iid}">—</b></div>'
+            f'<div class="out sellcell"></div><div class="out"></div></div>'
+        )
+
+    scenarios = [{"label": "اگر حباب صفر شود", "target": 0.0,
+                  "note": "فرض: حباب همه اقلام صفر شود و قیمت طلا و ارز ثابت بماند. "
+                          "سناریو است، نه پیش‌بینی."}]
+    if scenario_median is not None:
+        scenarios.append({
+            "label": f"اگر حباب به میانه تاریخی برگردد ({scenario_median * 100:+.1f}٪)",
+            "target": scenario_median,
+            "note": "فرض: حباب به میانه چندساله خودش برگردد، با ثابت ماندن طلا و ارز.",
+        })
+
+    st = reference.status
+    st_fa = {"CROSS_CHECKED": "دو مسیر مستقل، تأیید متقابل",
+             "SINGLE_ROUTE": "تک‌مسیر — بدون بررسی متقابل",
+             "DIVERGENT": "دو مسیر واگرا — با احتیاط",
+             "NO_DATA": "بدون داده"}.get(st, st)
+    gap = (f"{reference.route_gap_pct * 100:+.2f}٪"
+           if reference.route_gap_pct is not None else "—")
+
+    return f"""<title>کنسول طلافروش</title>
+<style>{CSS}</style>
+<div class="w" dir="rtl" lang="fa">
+<div class="hd">
+  <h1>کنسول طلافروش <span>· قطب‌نما</span></h1>
+  <p class="sub">{stamp_fa(now)}</p>
+</div>
+
+<div class="refbar">
+  <div><dt>هر گرم طلای خالص</dt>
+    <dd>{ref_irr / 10:,.0f}<small>ت</small></dd></div>
+  <div><dt>وضعیت مرجع</dt>
+    <dd style="font-size:13px;color:var(--txt2)">{st_fa}</dd></div>
+  <div><dt>اختلاف دو مسیر</dt><dd>{gap}</dd></div>
+  <div><dt>منابع</dt><dd>{len(reference.sources_used)}</dd></div>
+</div>
+
+<p class="lic">تنها عددی که این صفحه از بیرون می‌گیرد، ارزش هر گرم طلای خالص است —
+از APIهای عمومی صرافی‌ها، بدون هیچ سایت جمع‌آورندهٔ قیمت. تمام قیمت‌های ابزارها را
+خودتان وارد می‌کنید و در همین مرورگر می‌ماند.</p>
+
+<div class="tabs" role="tablist">
+  <button id="tab_hold" role="tab" aria-selected="true" aria-controls="pane_hold"
+          type="button">ارزش‌گذاری موجودی</button>
+  <button id="tab_quote" role="tab" aria-selected="false" aria-controls="pane_quote"
+          type="button">قیمت‌گذاری خرید</button>
+</div>
+
+<div class="pane" id="pane_hold" role="tabpanel" aria-labelledby="tab_hold">
+  <div class="rowhead"><span>قلم</span><span style="text-align:center">تعداد</span>
+  <span style="text-align:center">قیمت خرید (ت)</span>
+  <span style="text-align:center">قیمت فروش (ت)</span><span style="text-align:left">ارزش</span></div>
+  {"".join(hold_rows)}
+</div>
+<div class="tot">
+  <div><dt>ارزش کل موجودی</dt><dd><span id="t_market">0</span><small>ت</small></dd></div>
+  <div><dt>ارزش خودِ طلا</dt><dd><span id="t_intrinsic">0</span><small>ت</small></dd></div>
+  <div><dt>حباب در معرض ریسک</dt><dd class="risk"><span id="t_premium">0</span><small>ت</small></dd></div>
+  <div><dt>سهم حباب</dt><dd class="risk"><span id="t_share">—</span></dd></div>
+  <div><dt>طلای خالص</dt><dd><span id="t_grams">0</span><small>گرم</small></dd></div>
+</div>
+
+<div class="pane" id="pane_quote" role="tabpanel" aria-labelledby="tab_quote" hidden>
+  <div class="rowhead"><span>قلم</span><span>اسپرد شما</span>
+  <span>حداکثر قیمت خرید</span><span class="sellcell"></span><span></span></div>
+  {"".join(quote_rows)}
+</div>
+
+<div class="ctl">
+  <label for="target">حباب هدف برای خرید:</label>
+  <input id="target" type="number" step="0.5" value="3" aria-label="درصد حباب هدف">
+  <span style="color:var(--txt3);font-size:12.5px">٪ — بالاتر از این نخرید</span>
+  <button id="clear" class="act" type="button">پاک کردن همه</button>
+</div>
+
+<h2>اگر حباب جمع شود چه می‌شود؟</h2>
+<div id="stressbox"></div>
+
+<footer>
+  <p><b>«حداکثر قیمت خرید» چیست:</b> بالاترین مبلغی که می‌توانید بابت هر قلم بدهید و
+  همچنان در حباب هدف خودتان بمانید. با تغییر عدد حباب هدف، جدول بلافاصله به‌روز می‌شود.</p>
+  <p><b>چه نمی‌کند:</b> جهت بازار را پیش‌بینی نمی‌کند، نمی‌گوید چه بخرید یا بفروشید، و
+  گردش موجودی و تقاضای مشتری شما را نمی‌بیند. سناریوها قیمت طلا و ارز را ثابت نگه
+  می‌دارند تا فقط ریسک حباب جدا شود.</p>
+  <p>این ابزار تحلیل ارزش نسبی است و توصیه سرمایه‌گذاری نیست.</p>
+</footer>
+</div>
+<script>
+const REF={ref_irr};
+const ITEMS={json.dumps(items, ensure_ascii=False)};
+const SCENARIOS={json.dumps(scenarios, ensure_ascii=False)};
+{JS}
+</script>"""

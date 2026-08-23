@@ -1,0 +1,24 @@
+{
+  "audit_id": "AUD-LIVE-20260822-001",
+  "decision_id": "DEC-LIVE-20260822-001",
+  "snapshot_id": "SNAP-LIVE-20260822-001",
+  "created_at": "2026-08-22T20:40:23.431092+00:00",
+  "policy_versions": {
+    "data": "0.1.0",
+    "risk": "0.1.0",
+    "decision": "0.1.0",
+    "governance": "0.1.0"
+  },
+  "model_versions": {
+    "decision_engine": "0.1.0",
+    "state_classifier": "0.1.0"
+  },
+  "input_hash": "9ce14d18ed58d2d003b3acc6f71d9ddad7ba526bc9c58b29f268f4f675a76817",
+  "output_hash": "98a5439a55353745325d0a1b029ed1f318ff3ad36aaf4832f387189bc1174b9e",
+  "notes": [
+    "Pilot record uses real public observations retrieved on 2026-08-22.",
+    "XAU input is latest Aug 21 daily close, not live spot.",
+    "Bonbast was checked but parsed public content did not expose numeric USD buy/sell values; no value was fabricated.",
+    "This record intentionally demonstrates uncertainty-preserving behavior."
+  ]
+}

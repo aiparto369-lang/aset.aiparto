@@ -1,0 +1,542 @@
+[
+  {
+    "capture_id": "CAP-R001",
+    "scheduled_for": "2026-08-22T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R001.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R002",
+    "scheduled_for": "2026-08-23T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R002.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R003",
+    "scheduled_for": "2026-08-23T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R003.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R004",
+    "scheduled_for": "2026-08-23T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R004.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R005",
+    "scheduled_for": "2026-08-23T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R005.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R006",
+    "scheduled_for": "2026-08-23T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R006.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R007",
+    "scheduled_for": "2026-08-23T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R007.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R008",
+    "scheduled_for": "2026-08-24T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R008.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R009",
+    "scheduled_for": "2026-08-24T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R009.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R010",
+    "scheduled_for": "2026-08-24T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R010.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R011",
+    "scheduled_for": "2026-08-24T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R011.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R012",
+    "scheduled_for": "2026-08-24T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R012.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R013",
+    "scheduled_for": "2026-08-24T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R013.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R014",
+    "scheduled_for": "2026-08-25T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R014.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R015",
+    "scheduled_for": "2026-08-25T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R015.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R016",
+    "scheduled_for": "2026-08-25T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R016.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R017",
+    "scheduled_for": "2026-08-25T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R017.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R018",
+    "scheduled_for": "2026-08-25T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R018.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R019",
+    "scheduled_for": "2026-08-25T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R019.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R020",
+    "scheduled_for": "2026-08-26T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R020.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R021",
+    "scheduled_for": "2026-08-26T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R021.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R022",
+    "scheduled_for": "2026-08-26T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R022.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R023",
+    "scheduled_for": "2026-08-26T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R023.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R024",
+    "scheduled_for": "2026-08-26T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R024.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R025",
+    "scheduled_for": "2026-08-26T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R025.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R026",
+    "scheduled_for": "2026-08-27T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R026.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R027",
+    "scheduled_for": "2026-08-27T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R027.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R028",
+    "scheduled_for": "2026-08-27T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R028.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R029",
+    "scheduled_for": "2026-08-27T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R029.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R030",
+    "scheduled_for": "2026-08-27T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R030.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R031",
+    "scheduled_for": "2026-08-27T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R031.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R032",
+    "scheduled_for": "2026-08-28T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R032.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R033",
+    "scheduled_for": "2026-08-28T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R033.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R034",
+    "scheduled_for": "2026-08-28T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R034.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R035",
+    "scheduled_for": "2026-08-28T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R035.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R036",
+    "scheduled_for": "2026-08-28T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R036.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R037",
+    "scheduled_for": "2026-08-28T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R037.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R038",
+    "scheduled_for": "2026-08-29T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R038.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R039",
+    "scheduled_for": "2026-08-29T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R039.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R040",
+    "scheduled_for": "2026-08-29T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R040.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R041",
+    "scheduled_for": "2026-08-29T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R041.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R042",
+    "scheduled_for": "2026-08-29T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R042.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R043",
+    "scheduled_for": "2026-08-29T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R043.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R044",
+    "scheduled_for": "2026-08-30T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R044.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R045",
+    "scheduled_for": "2026-08-30T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R045.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R046",
+    "scheduled_for": "2026-08-30T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R046.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R047",
+    "scheduled_for": "2026-08-30T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R047.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R048",
+    "scheduled_for": "2026-08-30T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R048.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R049",
+    "scheduled_for": "2026-08-30T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R049.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R050",
+    "scheduled_for": "2026-08-31T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R050.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R051",
+    "scheduled_for": "2026-08-31T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R051.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R052",
+    "scheduled_for": "2026-08-31T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R052.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R053",
+    "scheduled_for": "2026-08-31T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R053.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R054",
+    "scheduled_for": "2026-08-31T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R054.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R055",
+    "scheduled_for": "2026-08-31T20:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R055.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R056",
+    "scheduled_for": "2026-09-01T00:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R056.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R057",
+    "scheduled_for": "2026-09-01T04:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R057.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R058",
+    "scheduled_for": "2026-09-01T08:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R058.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R059",
+    "scheduled_for": "2026-09-01T12:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R059.json",
+    "status": "PLANNED",
+    "notes": null
+  },
+  {
+    "capture_id": "CAP-R060",
+    "scheduled_for": "2026-09-01T16:29:24.392639+00:00",
+    "captured_at": null,
+    "capture_type": "ROUTINE",
+    "snapshot_file": "fixtures/pilot/SNAP-R060.json",
+    "status": "PLANNED",
+    "notes": null
+  }
+]

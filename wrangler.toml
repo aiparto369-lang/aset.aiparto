@@ -1,0 +1,11 @@
+# Cloudflare Pages — static hosting for the built site.
+#
+# No Worker and no build step on Cloudflare's side: GitHub Actions has already
+# produced the HTML, so Pages only serves it. That keeps the deploy path boring,
+# which is what you want on the surface a customer looks at.
+name = "capital-compass"
+compatibility_date = "2026-08-23"
+pages_build_output_dir = "public"
+
+[env.production]
+name = "capital-compass"

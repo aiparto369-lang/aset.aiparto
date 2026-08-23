@@ -1,0 +1,22 @@
+{
+  "review_type": "AI_SHADOW_ONLY",
+  "counts_as_human_validation": false,
+  "packet_id": "PKT-009",
+  "snapshot_id": "SNAP-HIST-20260818-010",
+  "labels": {
+    "data_state": "READY_LIMITED",
+    "fx_price_state": "UNKNOWN",
+    "fx_stress_state": "UNKNOWN",
+    "xau_price_state": "UNKNOWN",
+    "gold_premium_state": "UNKNOWN",
+    "coin_premium_state": "UNKNOWN",
+    "timing_state": "UNKNOWN",
+    "evidence_conflict_state": "NONE"
+  },
+  "ambiguity": "AMBIGUOUS",
+  "rationale": [
+    "Used only to rehearse the workflow.",
+    "Not counted as human validation.",
+    "Uncalibrated or unsupported states remain UNKNOWN."
+  ]
+}

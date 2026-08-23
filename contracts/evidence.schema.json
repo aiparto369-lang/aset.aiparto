@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capitalcompass.local/schemas/evidence.schema.json",
+  "title": "Capital Compass Evidence Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "variable_id",
+    "asset",
+    "market",
+    "value",
+    "unit",
+    "observation_time",
+    "retrieval_time",
+    "source",
+    "quality",
+    "materiality",
+    "lineage"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^EV-[A-Z0-9._:-]+$"
+    },
+    "variable_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asset": {
+      "type": "string",
+      "minLength": 1
+    },
+    "market": {
+      "type": "string",
+      "minLength": 1
+    },
+    "value": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "quote_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "BID",
+        "ASK",
+        "MID",
+        "LAST",
+        "REFERENCE",
+        "CLOSE",
+        "OPEN",
+        "HIGH",
+        "LOW",
+        null
+      ]
+    },
+    "observation_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "retrieval_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "class",
+        "origin_id"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "class": {
+          "type": "string",
+          "enum": [
+            "AUTHORITATIVE_PRIMARY",
+            "GOVERNED_BENCHMARK",
+            "PROFESSIONAL_MARKET_DATA",
+            "AGGREGATOR",
+            "MARKET_OBSERVATION",
+            "NEWS_ANALYSIS",
+            "SOCIAL_UNVERIFIED"
+          ]
+        },
+        "origin_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "freshness",
+        "verification",
+        "conflict",
+        "quality_class"
+      ],
+      "properties": {
+        "freshness": {
+          "type": "string",
+          "enum": [
+            "CURRENT",
+            "LATEST_RELEASE",
+            "STALE",
+            "UNKNOWN"
+          ]
+        },
+        "verification": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "PARTIAL",
+            "UNVERIFIED",
+            "REJECTED"
+          ]
+        },
+        "conflict": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "MINOR",
+            "MATERIAL",
+            "CRITICAL"
+          ]
+        },
+        "quality_class": {
+          "type": "string",
+          "enum": [
+            "DQ-A",
+            "DQ-B",
+            "DQ-C",
+            "DQ-D"
+          ]
+        }
+      }
+    },
+    "materiality": {
+      "type": "string",
+      "enum": [
+        "M1",
+        "M2",
+        "M3"
+      ]
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_reference",
+        "derived"
+      ],
+      "properties": {
+        "raw_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "derived": {
+          "type": "boolean"
+        },
+        "formula_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "formula_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "input_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^EV-[A-Z0-9._:-]+$"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lineage": {
+            "properties": {
+              "derived": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "lineage": {
+            "required": [
+              "formula_id",
+              "formula_version",
+              "input_evidence_ids"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

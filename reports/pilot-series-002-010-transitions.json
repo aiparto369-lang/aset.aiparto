@@ -1,0 +1,118 @@
+[
+  {
+    "pilot": "pilot-002",
+    "date": "20260806",
+    "fx_state": "UNKNOWN",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.03364124445446322,
+    "weekend_xau_carry": false,
+    "preferred_action": "INSUFFICIENT_EDGE",
+    "allowed_actions": [
+      "WAIT",
+      "INSUFFICIENT_EDGE"
+    ]
+  },
+  {
+    "pilot": "pilot-003",
+    "date": "20260808",
+    "fx_state": "UNKNOWN",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.033727872650740905,
+    "weekend_xau_carry": true,
+    "preferred_action": "INSUFFICIENT_EDGE",
+    "allowed_actions": [
+      "WAIT",
+      "INSUFFICIENT_EDGE"
+    ]
+  },
+  {
+    "pilot": "pilot-004",
+    "date": "20260809",
+    "fx_state": "DOWNTREND",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.031394889958394144,
+    "weekend_xau_carry": true,
+    "preferred_action": "WAIT",
+    "allowed_actions": [
+      "WAIT",
+      "INSUFFICIENT_EDGE"
+    ]
+  },
+  {
+    "pilot": "pilot-005",
+    "date": "20260810",
+    "fx_state": "TRANSITION",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.042799561771919174,
+    "weekend_xau_carry": false,
+    "preferred_action": "INSUFFICIENT_EDGE",
+    "allowed_actions": [
+      "WAIT",
+      "INSUFFICIENT_EDGE"
+    ]
+  },
+  {
+    "pilot": "pilot-006",
+    "date": "20260811",
+    "fx_state": "UPTREND",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.02915118998071941,
+    "weekend_xau_carry": false,
+    "preferred_action": "WAIT",
+    "allowed_actions": [
+      "WAIT"
+    ]
+  },
+  {
+    "pilot": "pilot-007",
+    "date": "20260815",
+    "fx_state": "TRANSITION",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.03323189707224737,
+    "weekend_xau_carry": true,
+    "preferred_action": "INSUFFICIENT_EDGE",
+    "allowed_actions": [
+      "WAIT",
+      "INSUFFICIENT_EDGE"
+    ]
+  },
+  {
+    "pilot": "pilot-008",
+    "date": "20260816",
+    "fx_state": "DOWNTREND",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.033579164825194324,
+    "weekend_xau_carry": true,
+    "preferred_action": "WAIT",
+    "allowed_actions": [
+      "WAIT",
+      "INSUFFICIENT_EDGE"
+    ]
+  },
+  {
+    "pilot": "pilot-009",
+    "date": "20260817",
+    "fx_state": "DOWNTREND",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.031899701145995725,
+    "weekend_xau_carry": false,
+    "preferred_action": "WAIT",
+    "allowed_actions": [
+      "WAIT",
+      "INSUFFICIENT_EDGE"
+    ]
+  },
+  {
+    "pilot": "pilot-010",
+    "date": "20260818",
+    "fx_state": "TRANSITION",
+    "xau_state": "UNKNOWN",
+    "premium_fraction": -0.012381669365884428,
+    "weekend_xau_carry": false,
+    "preferred_action": "INSUFFICIENT_EDGE",
+    "allowed_actions": [
+      "WAIT",
+      "INSUFFICIENT_EDGE"
+    ]
+  }
+]

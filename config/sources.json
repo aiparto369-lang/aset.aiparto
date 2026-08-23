@@ -1,0 +1,286 @@
+{
+  "registry_version": "0.1.0",
+  "sources": [
+    {
+      "source_id": "SRC-LBMA",
+      "name": "LBMA Gold Price / related benchmark data",
+      "domain": "lbma.org.uk",
+      "source_class": "GOVERNED_BENCHMARK",
+      "semantic_roles": [
+        "BENCHMARK",
+        "SECONDARY_CROSSCHECK"
+      ],
+      "variables": [
+        "XAU_BENCHMARK"
+      ],
+      "access": {
+        "method": "NOT_CONFIGURED",
+        "automation_status": "DISABLED",
+        "endpoint": null,
+        "auth_required": false
+      },
+      "rights": {
+        "status": "REVIEW_REQUIRED",
+        "commercial_use": "REVIEW_REQUIRED",
+        "redistribution": "REVIEW_REQUIRED",
+        "notes": "Benchmark/licensing rights must be reviewed before commercial production use."
+      },
+      "health_policy": {
+        "criticality": "M2",
+        "fallback_source_ids": []
+      },
+      "limitations": [
+        "Benchmark is not equivalent to a real-time executable XAUUSD quote.",
+        "Do not label as live spot unless source semantics support it."
+      ]
+    },
+    {
+      "source_id": "SRC-XAU-LIVE-PRIMARY",
+      "name": "Licensed/approved live XAUUSD provider",
+      "domain": null,
+      "source_class": "PROFESSIONAL_MARKET_DATA",
+      "semantic_roles": [
+        "LIVE_MARKET_OBSERVATION"
+      ],
+      "variables": [
+        "XAUUSD"
+      ],
+      "access": {
+        "method": "NOT_CONFIGURED",
+        "automation_status": "NOT_CONFIGURED",
+        "endpoint": null,
+        "auth_required": true
+      },
+      "rights": {
+        "status": "UNKNOWN",
+        "commercial_use": "UNKNOWN",
+        "redistribution": "UNKNOWN",
+        "notes": "Provider must be selected and licensed before production."
+      },
+      "health_policy": {
+        "criticality": "M1",
+        "fallback_source_ids": [
+          "SRC-XAU-LIVE-SECONDARY"
+        ]
+      },
+      "limitations": [
+        "Placeholder registry entry; no fabricated endpoint.",
+        "Must provide timestamped quote semantics: BID/ASK/MID/LAST."
+      ]
+    },
+    {
+      "source_id": "SRC-XAU-LIVE-SECONDARY",
+      "name": "Secondary approved XAUUSD provider",
+      "domain": null,
+      "source_class": "PROFESSIONAL_MARKET_DATA",
+      "semantic_roles": [
+        "SECONDARY_CROSSCHECK"
+      ],
+      "variables": [
+        "XAUUSD"
+      ],
+      "access": {
+        "method": "NOT_CONFIGURED",
+        "automation_status": "NOT_CONFIGURED",
+        "endpoint": null,
+        "auth_required": true
+      },
+      "rights": {
+        "status": "UNKNOWN",
+        "commercial_use": "UNKNOWN",
+        "redistribution": "UNKNOWN",
+        "notes": "Select after provider review."
+      },
+      "health_policy": {
+        "criticality": "M2",
+        "fallback_source_ids": []
+      },
+      "limitations": [
+        "Used for cross-check/fallback, not independent if sourced from same upstream feed."
+      ]
+    },
+    {
+      "source_id": "SRC-TGJU",
+      "name": "TGJU",
+      "domain": "tgju.org",
+      "source_class": "MARKET_OBSERVATION",
+      "semantic_roles": [
+        "FREE_MARKET_FX_OBSERVATION",
+        "DOMESTIC_GOLD_OBSERVATION",
+        "COIN_OBSERVATION"
+      ],
+      "variables": [
+        "USD_IRR_FREE_MARKET",
+        "GOLD_18K_IRR_GRAM",
+        "EMAMI_COIN_IRR"
+      ],
+      "access": {
+        "method": "NOT_CONFIGURED",
+        "automation_status": "PILOT_ONLY",
+        "endpoint": null,
+        "auth_required": false
+      },
+      "rights": {
+        "status": "REVIEW_REQUIRED",
+        "commercial_use": "REVIEW_REQUIRED",
+        "redistribution": "REVIEW_REQUIRED",
+        "notes": "Terms/licensing and automation permissions must be reviewed before production collection."
+      },
+      "health_policy": {
+        "criticality": "M1",
+        "fallback_source_ids": [
+          "SRC-BONBAST",
+          "SRC-MANUAL-IRAN"
+        ]
+      },
+      "limitations": [
+        "Market observation, not official government rate.",
+        "Quote semantics and timestamp must be captured explicitly."
+      ]
+    },
+    {
+      "source_id": "SRC-BONBAST",
+      "name": "Bonbast",
+      "domain": "bonbast.com",
+      "source_class": "MARKET_OBSERVATION",
+      "semantic_roles": [
+        "FREE_MARKET_FX_OBSERVATION",
+        "SECONDARY_CROSSCHECK"
+      ],
+      "variables": [
+        "USD_IRR_FREE_MARKET"
+      ],
+      "access": {
+        "method": "NOT_CONFIGURED",
+        "automation_status": "PILOT_ONLY",
+        "endpoint": null,
+        "auth_required": false
+      },
+      "rights": {
+        "status": "REVIEW_REQUIRED",
+        "commercial_use": "REVIEW_REQUIRED",
+        "redistribution": "REVIEW_REQUIRED",
+        "notes": "Use only after access/terms review."
+      },
+      "health_policy": {
+        "criticality": "M2",
+        "fallback_source_ids": [
+          "SRC-MANUAL-IRAN"
+        ]
+      },
+      "limitations": [
+        "Cross-check source; may differ by quote type, timing, settlement, or market segment."
+      ]
+    },
+    {
+      "source_id": "SRC-MANUAL-IRAN",
+      "name": "Controlled manual market observation",
+      "domain": null,
+      "source_class": "MARKET_OBSERVATION",
+      "semantic_roles": [
+        "FREE_MARKET_FX_OBSERVATION",
+        "DOMESTIC_GOLD_OBSERVATION",
+        "COIN_OBSERVATION",
+        "SECONDARY_CROSSCHECK"
+      ],
+      "variables": [
+        "USD_IRR_FREE_MARKET",
+        "GOLD_18K_IRR_GRAM",
+        "MELTED_GOLD_IRR",
+        "EMAMI_COIN_IRR"
+      ],
+      "access": {
+        "method": "MANUAL",
+        "automation_status": "APPROVED",
+        "endpoint": null,
+        "auth_required": false
+      },
+      "rights": {
+        "status": "CLEARED",
+        "commercial_use": "ALLOWED",
+        "redistribution": "REVIEW_REQUIRED",
+        "notes": "Human-entered observations; preserve operator/source provenance."
+      },
+      "health_policy": {
+        "criticality": "M2",
+        "fallback_source_ids": []
+      },
+      "limitations": [
+        "Human entry risk; requires dual-entry or cross-check for M1 use.",
+        "Must preserve original observed quote and source note."
+      ]
+    },
+    {
+      "source_id": "SRC-ALPHA-VANTAGE",
+      "name": "Alpha Vantage",
+      "domain": "alphavantage.co",
+      "source_class": "PROFESSIONAL_MARKET_DATA",
+      "semantic_roles": [
+        "LIVE_MARKET_OBSERVATION",
+        "SECONDARY_CROSSCHECK"
+      ],
+      "variables": [
+        "XAUUSD"
+      ],
+      "access": {
+        "method": "API",
+        "automation_status": "NOT_CONFIGURED",
+        "endpoint": "GOLD_SILVER_SPOT",
+        "auth_required": true
+      },
+      "rights": {
+        "status": "REVIEW_REQUIRED",
+        "commercial_use": "REVIEW_REQUIRED",
+        "redistribution": "REVIEW_REQUIRED",
+        "notes": "Terms state commercial use requires separate agreement; contact sales before business use."
+      },
+      "health_policy": {
+        "criticality": "M1",
+        "fallback_source_ids": [
+          "SRC-METALS-API"
+        ]
+      },
+      "limitations": [
+        "Dedicated gold/silver spot endpoint documented.",
+        "Adapter disabled until API key and commercial-use rights are confirmed.",
+        "Provider response schema must be contract-tested before activation."
+      ]
+    },
+    {
+      "source_id": "SRC-METALS-API",
+      "name": "Metals-API",
+      "domain": "metals-api.com",
+      "source_class": "PROFESSIONAL_MARKET_DATA",
+      "semantic_roles": [
+        "LIVE_MARKET_OBSERVATION",
+        "SECONDARY_CROSSCHECK"
+      ],
+      "variables": [
+        "XAUUSD"
+      ],
+      "access": {
+        "method": "API",
+        "automation_status": "NOT_CONFIGURED",
+        "endpoint": "latest XAU-BID/XAU-ASK",
+        "auth_required": true
+      },
+      "rights": {
+        "status": "REVIEW_REQUIRED",
+        "commercial_use": "REVIEW_REQUIRED",
+        "redistribution": "REVIEW_REQUIRED",
+        "notes": "Free plan is testing/personal only. Paid commercial use is permitted during active subscription, but competition restriction needs product/legal review."
+      },
+      "health_policy": {
+        "criticality": "M2",
+        "fallback_source_ids": [
+          "SRC-ALPHA-VANTAGE"
+        ]
+      },
+      "limitations": [
+        "Bid/ask endpoint documented.",
+        "Returned XAU rate under USD base is inverse-transformed to USD/oz per provider documentation.",
+        "Do not activate for production until product-use/competition restriction is cleared."
+      ]
+    }
+  ]
+}

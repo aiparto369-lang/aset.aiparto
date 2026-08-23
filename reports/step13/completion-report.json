@@ -1,0 +1,9 @@
+{
+  "completion_version": "1.0.0",
+  "scope": "Capital Compass v3 Gold/FX vertical slice",
+  "software_core": "COMPLETE_BASELINE",
+  "architecture": "FROZEN",
+  "production_validation": "INCOMPLETE_EXTERNAL_GATES",
+  "production_release": "BLOCKED",
+  "anti_loop_rule": "No further architecture work until external evidence arrives or an observed failure requires change."
+}
