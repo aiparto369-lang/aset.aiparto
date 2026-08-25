@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-08-25T08:25:39.482235+00:00",
+  "generated_at": "2026-08-25T09:22:29.381235+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4627.52,
+    "xau_usd": 4616.855,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": 0.00022708897376229982,
-    "usd_irr_crypto": 2039550.0,
+    "xau_divergence_pct": -0.00047384145072011,
+    "usd_irr_crypto": 2023975.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2039550.0,
+    "usd_irr_used": 2023975.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 303475078.2426999,
+  "reference_irr_per_gram": 300358229.30292153,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 303440624.2327225,
-    "b": 303509532.2526773,
-    "gap_pct": 0.00022708897376229982
+    "a": 300429407.2560081,
+    "b": 300287051.3498349,
+    "gap_pct": -0.00047384145072011
   },
   "sources_used": [
     "routeA:ramzinex",
     "routeA:bitpin",
     "routeA:wallex",
     "routeA:xau(CROSS_CHECKED)",
+    "routeB:ramzinex:paxg_irr",
     "routeB:bitpin:PAXG_IRT",
     "routeB:bitpin:XAUT_IRT",
-    "routeB:ramzinex:paxg_irr",
     "routeB:wallex:XAUTTMN"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 303475078.2426999
+    "reference_pure_gram_irr": 300358229.30292153
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -45,8 +45,8 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "wallex:PAXGTMN کنار گذاشته شد (-5.0٪ از میانه).",
-    "دو مسیر مستقل با اختلاف +0.02٪ هم‌خوانی دارند."
+    "wallex:PAXGTMN کنار گذاشته شد (-3.3٪ از میانه).",
+    "دو مسیر مستقل با اختلاف -0.05٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
