@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-08-30T18:51:19.945282+00:00",
+  "generated_at": "2026-08-30T19:57:14.651689+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4465.9,
+    "xau_usd": 4464.382500000001,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": -0.0001602545776213914,
-    "usd_irr_crypto": 2052188.5,
+    "xau_divergence_pct": -0.001137152013664352,
+    "usd_irr_crypto": 2058280.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2052188.5,
+    "usd_irr_used": 2058280.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 294633758.3094569,
+  "reference_irr_per_gram": 295263602.04367894,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 294657368.4055153,
-    "b": 294610148.21339846,
-    "gap_pct": -0.0001602545776213914
+    "a": 295431577.35022086,
+    "b": 295095626.737137,
+    "gap_pct": -0.001137152013664352
   },
   "sources_used": [
     "routeA:ramzinex",
-    "routeA:bitpin",
     "routeA:wallex",
+    "routeA:bitpin",
     "routeA:xau(CROSS_CHECKED)",
     "routeB:ramzinex:paxg_irr",
-    "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT",
     "routeB:wallex:PAXGTMN",
-    "routeB:wallex:XAUTTMN"
+    "routeB:wallex:XAUTTMN",
+    "routeB:bitpin:PAXG_IRT",
+    "routeB:bitpin:XAUT_IRT"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 294633758.3094569
+    "reference_pure_gram_irr": 295263602.04367894
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -46,7 +46,7 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "دو مسیر مستقل با اختلاف -0.02٪ هم‌خوانی دارند."
+    "دو مسیر مستقل با اختلاف -0.11٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
