@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-09-08T13:56:13.404540+00:00",
+  "generated_at": "2026-09-08T17:38:30.895741+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4404.0125,
+    "xau_usd": 4391.4400000000005,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": -0.0029763614362831817,
-    "usd_irr_crypto": 2277410.0,
+    "xau_divergence_pct": 5.1224037616533535e-05,
+    "usd_irr_crypto": 2276985.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2277410.0,
+    "usd_irr_used": 2276985.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 321983812.39529145,
+  "reference_irr_per_gram": 321491361.6731105,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 322463696.65094805,
-    "b": 321503928.13963485,
-    "gap_pct": -0.0029763614362831817
+    "a": 321483127.8411937,
+    "b": 321499595.5050273,
+    "gap_pct": 5.1224037616533535e-05
   },
   "sources_used": [
     "routeA:ramzinex",
@@ -29,7 +29,6 @@
     "routeA:wallex",
     "routeA:xau(CROSS_CHECKED)",
     "routeB:ramzinex:paxg_irr",
-    "routeB:wallex:PAXGTMN",
     "routeB:wallex:XAUTTMN",
     "routeB:bitpin:PAXG_IRT",
     "routeB:bitpin:XAUT_IRT"
@@ -37,7 +36,7 @@
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 321983812.39529145
+    "reference_pure_gram_irr": 321491361.6731105
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -46,7 +45,8 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "دو مسیر مستقل با اختلاف -0.30٪ هم‌خوانی دارند."
+    "wallex:PAXGTMN کنار گذاشته شد (-3.5٪ از میانه).",
+    "دو مسیر مستقل با اختلاف +0.01٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
