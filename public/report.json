@@ -1,34 +1,32 @@
 {
-  "generated_at": "2026-09-07T20:41:59.619665+00:00",
+  "generated_at": "2026-09-08T09:11:36.161317+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4410.935,
+    "xau_usd": 4394.9075,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": 0.0001355262965134937,
-    "usd_irr_crypto": 2239030.0,
+    "xau_divergence_pct": 3.0450496079028094e-05,
+    "usd_irr_crypto": 2255722.5,
     "usd_irr_cash": null,
-    "usd_irr_used": 2239030.0,
+    "usd_irr_used": 2255722.5,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 317549227.6967892,
+  "reference_irr_per_gram": 318737443.255359,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 317527711.01943177,
-    "b": 317570744.37414664,
-    "gap_pct": 0.0001355262965134937
+    "a": 318732590.4726108,
+    "b": 318742296.0381072,
+    "gap_pct": 3.0450496079028094e-05
   },
   "sources_used": [
-    "routeA:ramzinex",
     "routeA:bitpin",
     "routeA:wallex",
     "routeA:xau(CROSS_CHECKED)",
-    "routeB:ramzinex:paxg_irr",
     "routeB:bitpin:PAXG_IRT",
     "routeB:bitpin:XAUT_IRT",
     "routeB:wallex:XAUTTMN"
@@ -36,7 +34,7 @@
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 317549227.6967892
+    "reference_pure_gram_irr": 318737443.255359
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -45,8 +43,9 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "wallex:PAXGTMN کنار گذاشته شد (-3.3٪ از میانه).",
-    "دو مسیر مستقل با اختلاف +0.01٪ هم‌خوانی دارند."
+    "_ramzinex_gold_irr_per_gram: HTTPError",
+    "wallex:PAXGTMN کنار گذاشته شد (-3.2٪ از میانه).",
+    "دو مسیر مستقل با اختلاف +0.00٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
