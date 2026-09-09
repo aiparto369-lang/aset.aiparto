@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-09-09T17:30:23.136431+00:00",
+  "generated_at": "2026-09-09T19:56:35.953044+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4413.0425,
+    "xau_usd": 4397.83,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": 0.0006161272369907886,
-    "usd_irr_crypto": 2342075.0,
+    "xau_divergence_pct": 0.0001553720144471579,
+    "usd_irr_crypto": 2349300.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2342075.0,
+    "usd_irr_used": 2349300.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 332402085.6438066,
+  "reference_irr_per_gram": 332201596.73596364,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 332299716.1908118,
-    "b": 332504455.0968013,
-    "gap_pct": 0.0006161272369907886
+    "a": 332175791.32503927,
+    "b": 332227402.146888,
+    "gap_pct": 0.0001553720144471579
   },
   "sources_used": [
     "routeA:ramzinex",
-    "routeA:bitpin",
     "routeA:wallex",
+    "routeA:bitpin",
     "routeA:xau(CROSS_CHECKED)",
     "routeB:ramzinex:paxg_irr",
+    "routeB:wallex:XAUTTMN",
     "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT",
-    "routeB:wallex:XAUTTMN"
+    "routeB:bitpin:XAUT_IRT"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 332402085.6438066
+    "reference_pure_gram_irr": 332201596.73596364
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -45,8 +45,8 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "wallex:PAXGTMN کنار گذاشته شد (-3.4٪ از میانه).",
-    "دو مسیر مستقل با اختلاف +0.06٪ هم‌خوانی دارند."
+    "wallex:PAXGTMN کنار گذاشته شد (-3.7٪ از میانه).",
+    "دو مسیر مستقل با اختلاف +0.02٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
