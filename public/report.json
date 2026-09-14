@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-09-14T10:09:23.576353+00:00",
+  "generated_at": "2026-09-14T16:39:28.584954+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4291.7474999999995,
+    "xau_usd": 4308.21,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": -0.0008816975335297013,
-    "usd_irr_crypto": 2327015.0,
+    "xau_divergence_pct": -0.0008152913019415839,
+    "usd_irr_crypto": 2289730.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2327015.0,
+    "usd_irr_used": 2289730.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 320946694.594485,
+  "reference_irr_per_gram": 317026179.10065925,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 321088245.9517355,
-    "b": 320805143.2372345,
-    "gap_pct": -0.0008816975335297013
+    "a": 317155466.14711577,
+    "b": 316896892.0542028,
+    "gap_pct": -0.0008152913019415839
   },
   "sources_used": [
-    "routeA:bitpin",
     "routeA:ramzinex",
+    "routeA:bitpin",
     "routeA:wallex",
     "routeA:xau(CROSS_CHECKED)",
     "routeB:ramzinex:paxg_irr",
-    "routeB:wallex:PAXGTMN",
-    "routeB:wallex:XAUTTMN",
     "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT"
+    "routeB:bitpin:XAUT_IRT",
+    "routeB:wallex:PAXGTMN",
+    "routeB:wallex:XAUTTMN"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 320946694.594485
+    "reference_pure_gram_irr": 317026179.10065925
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -46,7 +46,7 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "دو مسیر مستقل با اختلاف -0.09٪ هم‌خوانی دارند."
+    "دو مسیر مستقل با اختلاف -0.08٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
