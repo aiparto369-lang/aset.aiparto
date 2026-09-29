@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-09-29T10:56:31.226566+00:00",
+  "generated_at": "2026-09-29T16:42:19.585325+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4160.0725,
+    "xau_usd": 4157.7225,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": 0.000640527331470792,
-    "usd_irr_crypto": 2531520.0,
+    "xau_divergence_pct": 0.00031535686777904023,
+    "usd_irr_crypto": 2536450.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2531520.0,
+    "usd_irr_used": 2536450.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 338697811.75395805,
+  "reference_irr_per_gram": 339110581.0094677,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 338589373.8799002,
-    "b": 338806249.6280159,
-    "gap_pct": 0.000640527331470792
+    "a": 339057119.01394254,
+    "b": 339164043.00499296,
+    "gap_pct": 0.00031535686777904023
   },
   "sources_used": [
-    "routeA:bitpin",
     "routeA:wallex",
     "routeA:ramzinex",
+    "routeA:bitpin",
     "routeA:xau(CROSS_CHECKED)",
-    "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT",
     "routeB:wallex:XAUTTMN",
-    "routeB:ramzinex:paxg_irr"
+    "routeB:ramzinex:paxg_irr",
+    "routeB:bitpin:PAXG_IRT",
+    "routeB:bitpin:XAUT_IRT"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 338697811.75395805
+    "reference_pure_gram_irr": 339110581.0094677
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -45,8 +45,8 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "wallex:PAXGTMN کنار گذاشته شد (-3.4٪ از میانه).",
-    "دو مسیر مستقل با اختلاف +0.06٪ هم‌خوانی دارند."
+    "wallex:PAXGTMN کنار گذاشته شد (-4.0٪ از میانه).",
+    "دو مسیر مستقل با اختلاف +0.03٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
