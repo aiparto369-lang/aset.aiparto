@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-09-30T21:29:52.326378+00:00",
+  "generated_at": "2026-10-01T11:13:17.400229+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4165.915,
+    "xau_usd": 4175.4400000000005,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": -0.0018774443018765331,
-    "usd_irr_crypto": 2533005.0,
+    "xau_divergence_pct": 0.0003677711652882143,
+    "usd_irr_crypto": 2569940.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2533005.0,
+    "usd_irr_used": 2569940.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 338945318.88111943,
+  "reference_irr_per_gram": 345061214.5649261,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 339263793.31891924,
-    "b": 338626844.4433196,
-    "gap_pct": -0.0018774443018765331
+    "a": 344997774.44816077,
+    "b": 345124654.6816914,
+    "gap_pct": 0.0003677711652882143
   },
   "sources_used": [
     "routeA:ramzinex",
-    "routeA:bitpin",
     "routeA:wallex",
+    "routeA:bitpin",
     "routeA:xau(CROSS_CHECKED)",
     "routeB:ramzinex:paxg_irr",
-    "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT",
     "routeB:wallex:PAXGTMN",
-    "routeB:wallex:XAUTTMN"
+    "routeB:wallex:XAUTTMN",
+    "routeB:bitpin:PAXG_IRT",
+    "routeB:bitpin:XAUT_IRT"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 338945318.88111943
+    "reference_pure_gram_irr": 345061214.5649261
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -46,7 +46,7 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "دو مسیر مستقل با اختلاف -0.19٪ هم‌خوانی دارند."
+    "دو مسیر مستقل با اختلاف +0.04٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
