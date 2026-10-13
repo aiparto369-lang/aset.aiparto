@@ -1,42 +1,43 @@
 {
-  "generated_at": "2026-10-13T12:14:37.238943+00:00",
+  "generated_at": "2026-10-13T19:35:26.755511+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4188.0375,
+    "xau_usd": 4167.4125,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": 0.00120229839723978,
-    "usd_irr_crypto": 2545390.0,
+    "xau_divergence_pct": -0.001546287086060746,
+    "usd_irr_crypto": 2573920.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2545390.0,
+    "usd_irr_used": 2573920.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 342939061.2711985,
+  "reference_irr_per_gram": 344601128.0320919,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 342733027.5863244,
-    "b": 343145094.95607257,
-    "gap_pct": 0.00120229839723978
+    "a": 344867760.31417817,
+    "b": 344334495.75000566,
+    "gap_pct": -0.001546287086060746
   },
   "sources_used": [
     "routeA:ramzinex",
-    "routeA:wallex",
     "routeA:bitpin",
+    "routeA:wallex",
     "routeA:xau(CROSS_CHECKED)",
     "routeB:ramzinex:paxg_irr",
-    "routeB:wallex:XAUTTMN",
     "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT"
+    "routeB:bitpin:XAUT_IRT",
+    "routeB:wallex:PAXGTMN",
+    "routeB:wallex:XAUTTMN"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 342939061.2711985
+    "reference_pure_gram_irr": 344601128.0320919
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -45,8 +46,7 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "wallex:PAXGTMN کنار گذاشته شد (-3.2٪ از میانه).",
-    "دو مسیر مستقل با اختلاف +0.12٪ هم‌خوانی دارند."
+    "دو مسیر مستقل با اختلاف -0.15٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
