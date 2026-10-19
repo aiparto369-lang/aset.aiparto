@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-10-19T17:13:35.029625+00:00",
+  "generated_at": "2026-10-19T21:39:33.946873+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4137.797500000001,
+    "xau_usd": 4144.3125,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": 0.0006388542820482865,
-    "usd_irr_crypto": 2611885.5,
+    "xau_divergence_pct": -1.2668242036439932e-05,
+    "usd_irr_crypto": 2600050.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2611885.5,
+    "usd_irr_used": 2600050.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 347578682.46077,
+  "reference_irr_per_gram": 346435594.06877947,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 347467691.8493643,
-    "b": 347689673.0721757,
-    "gap_pct": 0.0006388542820482865
+    "a": 346437788.4476568,
+    "b": 346433399.6899022,
+    "gap_pct": -1.2668242036439932e-05
   },
   "sources_used": [
     "routeA:ramzinex",
-    "routeA:wallex",
     "routeA:bitpin",
+    "routeA:wallex",
     "routeA:xau(CROSS_CHECKED)",
     "routeB:ramzinex:paxg_irr",
-    "routeB:wallex:PAXGTMN",
-    "routeB:wallex:XAUTTMN",
     "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT"
+    "routeB:bitpin:XAUT_IRT",
+    "routeB:wallex:PAXGTMN",
+    "routeB:wallex:XAUTTMN"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 347578682.46077
+    "reference_pure_gram_irr": 346435594.06877947
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -46,7 +46,7 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "دو مسیر مستقل با اختلاف +0.06٪ هم‌خوانی دارند."
+    "دو مسیر مستقل با اختلاف -0.00٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
