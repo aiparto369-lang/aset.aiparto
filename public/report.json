@@ -1,40 +1,43 @@
 {
-  "generated_at": "2026-11-01T17:16:31.039932+00:00",
+  "generated_at": "2026-11-01T21:19:38.393855+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 3886.5825,
+    "xau_usd": 3885.8824999999997,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": 0.002338157951536143,
-    "usd_irr_crypto": 2717155.25,
+    "xau_divergence_pct": 1.21079962574392e-05,
+    "usd_irr_crypto": 2722550.5,
     "usd_irr_cash": null,
-    "usd_irr_used": 2717155.25,
+    "usd_irr_used": 2722550.5,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 339923221.7736045,
+  "reference_irr_per_gram": 340141247.2208935,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 339526288.72773236,
-    "b": 340320154.81947666,
-    "gap_pct": 0.002338157951536143
+    "a": 340139188.01888573,
+    "b": 340143306.4229013,
+    "gap_pct": 1.21079962574392e-05
   },
   "sources_used": [
-    "routeA:ramzinex",
     "routeA:bitpin",
+    "routeA:ramzinex",
+    "routeA:wallex",
     "routeA:xau(CROSS_CHECKED)",
     "routeB:ramzinex:paxg_irr",
     "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT"
+    "routeB:bitpin:XAUT_IRT",
+    "routeB:wallex:PAXGTMN",
+    "routeB:wallex:XAUTTMN"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 339923221.7736045
+    "reference_pure_gram_irr": 340141247.2208935
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -43,8 +46,7 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "_wallex_gold_irr_per_gram: URLError",
-    "دو مسیر مستقل با اختلاف +0.23٪ هم‌خوانی دارند."
+    "دو مسیر مستقل با اختلاف +0.00٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
