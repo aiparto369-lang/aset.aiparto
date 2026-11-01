@@ -1,43 +1,40 @@
 {
-  "generated_at": "2026-11-01T11:31:25.849195+00:00",
+  "generated_at": "2026-11-01T17:16:31.039932+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 3887.785,
+    "xau_usd": 3886.5825,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": 0.0006237717022478302,
-    "usd_irr_crypto": 2723020.0,
+    "xau_divergence_pct": 0.002338157951536143,
+    "usd_irr_crypto": 2717155.25,
     "usd_irr_cash": null,
-    "usd_irr_used": 2723020.0,
+    "usd_irr_used": 2717155.25,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 340470557.7914685,
+  "reference_irr_per_gram": 339923221.7736045,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 340364402.9499622,
-    "b": 340576712.63297486,
-    "gap_pct": 0.0006237717022478302
+    "a": 339526288.72773236,
+    "b": 340320154.81947666,
+    "gap_pct": 0.002338157951536143
   },
   "sources_used": [
-    "routeA:bitpin",
-    "routeA:wallex",
     "routeA:ramzinex",
+    "routeA:bitpin",
     "routeA:xau(CROSS_CHECKED)",
+    "routeB:ramzinex:paxg_irr",
     "routeB:bitpin:PAXG_IRT",
-    "routeB:bitpin:XAUT_IRT",
-    "routeB:wallex:PAXGTMN",
-    "routeB:wallex:XAUTTMN",
-    "routeB:ramzinex:paxg_irr"
+    "routeB:bitpin:XAUT_IRT"
   ],
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 340470557.7914685
+    "reference_pure_gram_irr": 339923221.7736045
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -46,7 +43,8 @@
   "unit_fault": null,
   "breakeven_usd_irr_at_zero_bubble": {},
   "faults": [
-    "دو مسیر مستقل با اختلاف +0.06٪ هم‌خوانی دارند."
+    "_wallex_gold_irr_per_gram: URLError",
+    "دو مسیر مستقل با اختلاف +0.23٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
