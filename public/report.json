@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-11-10T20:38:02.933700+00:00",
+  "generated_at": "2026-11-10T22:27:53.239491+00:00",
   "engine_version": "2.1.0",
   "build_mode": "clean",
   "licence_class": "EXCHANGE_PUBLIC_API",
   "anchors": {
-    "xau_usd": 4023.3450000000003,
+    "xau_usd": 4026.0225,
     "xau_source": "multi-venue median",
     "xau_status": "CROSS_CHECKED",
-    "xau_divergence_pct": -0.003564822132010221,
-    "usd_irr_crypto": 2537440.0,
+    "xau_divergence_pct": -0.011464380571851921,
+    "usd_irr_crypto": 2532355.0,
     "usd_irr_cash": null,
-    "usd_irr_used": 2537440.0,
+    "usd_irr_used": 2532355.0,
     "anchor_kind": "EXCHANGE_LIVE",
     "usdt_spread_bps": null,
     "tether_premium_pct": null,
     "same_instant_legs": true
   },
-  "reference_irr_per_gram": 327641825.18656564,
+  "reference_irr_per_gram": 325908153.907532,
   "reference_status": "CROSS_CHECKED",
   "reference_routes": {
-    "a": 328226860.3746576,
-    "b": 327056789.99847376,
-    "gap_pct": -0.003564822132010221
+    "a": 327787091.8915245,
+    "b": 324029215.92353946,
+    "gap_pct": -0.011464380571851921
   },
   "sources_used": [
     "routeA:wallex",
@@ -32,7 +32,7 @@
   "arbitrage": {
     "rows": [],
     "faults": [],
-    "reference_pure_gram_irr": 327641825.18656564
+    "reference_pure_gram_irr": 325908153.907532
   },
   "consistency": {
     "status": "NOT_APPLICABLE",
@@ -43,7 +43,7 @@
   "faults": [
     "_ramzinex_gold_irr_per_gram: HTTPError",
     "_bitpin_gold_irr_per_gram: HTTPError",
-    "دو مسیر مستقل با اختلاف -0.36٪ هم‌خوانی دارند."
+    "دو مسیر مستقل با اختلاف -1.15٪ هم‌خوانی دارند."
   ],
   "disclaimer": "این ابزار تحلیل ارزش نسبی بر پایه داده عمومی بازار است و توصیه سرمایه‌گذاری نیست."
 }
